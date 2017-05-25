@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "classlist",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "mocha ./test/specs/**/*.spec.js",
+    "watch:test": "chokidar './src/**/*.js' './test/specs/**/*.js' --initial -c 'npm test'"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0",
+    "mocha": "^3.4.2"
+  }
+}

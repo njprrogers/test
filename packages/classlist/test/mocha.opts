@@ -1,0 +1,6 @@
+--ui bdd
+--recursive
+--colors
+--check-leaks
+--reporter dot
+--require ./test/setup.js
