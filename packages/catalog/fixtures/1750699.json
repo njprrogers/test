@@ -1,0 +1,40 @@
+{
+  "id":"cit-7140e39456ea43ebb5324213570ef55e",
+  "number":"1750699",
+  "locale":"en_US",
+  "name":"Safavieh Pillows Gorgon Tiles Pillows (Set of 2) - Green / Beige",
+  "price":{
+     "amount":116,
+     "currency":"USD",
+     "label":"$116.00"
+  },
+  "categories":[
+     "Home & Garden",
+     "Linens & Bedding",
+     "Bedding",
+     "Pillows"
+  ],
+  "attributes":{
+     "msrp":"150",
+     "url":"http://www.gilt.com/brand/safavieh-pillows/product/160069563-safavieh-pillows-gorgon-tiles-pillows-set-of-2?origin=partner_feed&utm_source=google&utm_medium=CPC&utm_campaign=PLA",
+     "countries_of_origin":"CHN",
+     "color":"green / beige",
+     "brand":"Safavieh Pillows",
+     "product_id":"160069562",
+     "gender":"Unisex"
+  },
+  "dimensions": {},
+  "images":[
+     {
+        "url":"http://cdn1.gilt.com/images/share/uploads/0000/0001/6134/161342700/1080x1440.jpg",
+        "tags":[]
+     },
+     {
+        "url":"http://cdn1.gilt.com/images/share/uploads/0000/0001/6134/161342700/135x180.jpg",
+        "tags":[
+           "thumbnail"
+        ]
+     }
+  ],
+  "description":"Gorgon Tiles Pillows: *Set of two square pillows *Hidden zipper closure *Polyfill inserts included *Each pillow measures 18 inches square *Dry clean or spot clean only"
+}

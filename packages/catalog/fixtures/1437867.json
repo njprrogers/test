@@ -1,0 +1,39 @@
+{
+  "id": "cit-d40cb7db5ace4397b98ba3242c4138b4",
+  "number": "1437867",
+  "locale": "en_US",
+  "name": "Safavieh Pillows Gossamer Pillows (Set of 2) - Olive / Red",
+  "price":{
+     "amount": 78,
+     "currency": "USD",
+     "label": "$78.00"
+  },
+  "categories": [
+     "Home & Garden",
+     "Linens & Bedding",
+     "Bedding",
+     "Pillows"
+  ],
+  "attributes":{
+     "url": "http://www.gilt.com/brand/safavieh-pillows/product/133552068-safavieh-pillows-gossamer-pillows-set-of-2?origin=partner_feed&utm_source=google&utm_medium=CPC&utm_campaign=PLA",
+     "countries_of_origin": "CHN",
+     "color": "olive / red",
+     "brand": "Safavieh Pillows",
+     "product_id": "133552063",
+     "gender": "Unisex"
+  },
+  "dimensions": {},
+  "images": [
+     {
+        "url": "http://cdn1.gilt.com/images/share/uploads/0000/0001/3506/135062566/1080x1440.jpg",
+        "tags": []
+     },
+     {
+        "url": "http://cdn1.gilt.com/images/share/uploads/0000/0001/3506/135062566/135x180.jpg",
+        "tags": [
+           "thumbnail"
+        ]
+     }
+  ],
+  "description": "Gossamer Pillows:  *Set of two square pillows *Fiber fill inserts included *Each pillow measures 18 inches square *Dry clean or spot clean only"
+}

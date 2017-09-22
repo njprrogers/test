@@ -1,0 +1,52 @@
+{
+  "id":"cit-c3c01f856e814a308dc4835eeec2bbb1",
+  "number":"1493200",
+  "locale":"en_US",
+  "name":"Mountain Flow and DONT USE - Three Classes",
+  "price":{
+     "amount": 30,
+     "currency": "USD",
+     "label": "$30.00"
+  },
+  "categories":[
+     "City",
+     "Fitness",
+     "Fitness groupclasses",
+     "Fitness groupclasses yoga"
+  ],
+  "attributes":{
+     "image_url":"https://cdn5.giltcdn.com/images/share/uploads/0000/0001/4334/143347275/med.jpg",
+     "gilt_style_number":"gcnyp17567",
+     "base_price":"0.0",
+     "size":"44",
+     "division_name":"Seattle",
+     "sku_size_chart_column_id":"2",
+     "sku_size_type":"No size needed",
+     "brand_id":"137610226",
+     "public_url":"http://us.localhost:3000/sale/men/public/product/138742397",
+     "sku_size_chart_id":"2",
+     "upc":"1000014932006",
+     "msrp_price":"51.0",
+     "product_look_id":"138742397",
+     "sale_price":"30.0",
+     "brand_name":"Mountain Flow Yoga",
+     "division_key":"all / city / seattle",
+     "product_id":"138742396",
+     "vendor_style_number":"gcnyp17567",
+     "product_category_name":"Fitness groupclasses yoga",
+     "velocity":"50",
+     "nrf_code":"0",
+     "sku_size":"No size needed",
+     "vendor_color":"default",
+     "gilt_color":"default"
+  },
+  "dimensions": {},
+  "images":[
+     {
+        "url":"https://cdn5.giltcdn.com/images/share/uploads/0000/0001/4334/143347275/orig.jpg",
+        "tags":[
+           "thumbnail"
+        ]
+     }
+  ]
+}
