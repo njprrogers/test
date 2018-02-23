@@ -4,6 +4,6 @@ This repo is set up as a _monorepo_ using [lerna](https://github.com/lerna/lerna
 
 ## Exercises
 
-* [Classlist](packages/classList/README.md)
+* [Classlist](packages/classlist/README.md)
 * [Tiles](packages/tiles/README.md)
 * [Catalog](packages/catalog/README.md)
