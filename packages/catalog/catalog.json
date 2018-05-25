@@ -1,0 +1,1629 @@
+[
+    {
+        "id": "cit-8ce5e00577824fb580665aaaf0499eb0",
+        "number": "9485h",
+        "locale": "en_UK",
+        "name": "a corgi dog",
+        "price": {
+            "amount": 400,
+            "currency": "CAD",
+            "label": "CA$400.00"
+        },
+        "categories": [
+            "deadly"
+        ],
+        "attributes": {
+            "brand": "Gucci"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "14",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "data:image/jpeg;base64,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",
+                "tags": [
+                    "thumbnail"
+                ]
+            },
+            {
+                "url": "data:image/jpeg;base64,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",
+                "tags": [
+                    "checkout"
+                ]
+            }
+        ],
+        "description": "a corgiiiii"
+    },
+    {
+        "id": "cit-4077bbbe69d34cf4a03e723ee99b93d1",
+        "number": "38973h",
+        "locale": "en_UK",
+        "name": "aiojg",
+        "price": {
+            "amount": 433,
+            "currency": "CAD",
+            "label": "CA$433.00"
+        },
+        "categories": [
+            "cool cool cool",
+            "weeee"
+        ],
+        "attributes": {
+            "gender": "male"
+        },
+        "dimensions": {
+            "product": {},
+            "packaging": {}
+        },
+        "images": [
+            {
+                "url": "grg",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "a description"
+    },
+    {
+        "id": "cit-7a5a0d07d6ba436ba56e9b1d5cff033f",
+        "number": "9875h2",
+        "locale": "en_UK",
+        "name": "a test item",
+        "price": {
+            "amount": 23,
+            "currency": "USD",
+            "label": "US$23.00"
+        },
+        "categories": [
+            "test",
+            "weee"
+        ],
+        "attributes": {
+            "brand": "gucci",
+            "gender": "male"
+        },
+        "dimensions": {
+            "product": {},
+            "packaging": {}
+        },
+        "images": [
+            {
+                "url": "adg",
+                "tags": [
+                    "checkout"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "cit-a2ad6f2ab963416a8c0c780c487190c4",
+        "number": "458242Ag",
+        "locale": "en_US",
+        "name": "Blackish T-shirt",
+        "price": {
+            "amount": 10,
+            "currency": "CAD",
+            "label": "CA$10.00"
+        },
+        "categories": [
+            "shirt",
+            "clothing",
+            "male"
+        ],
+        "attributes": {
+            "brand": "Uniqlo",
+            "countryOfOrigin": "Japan"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/gif/350/350",
+                "tags": [
+                    "main"
+                ]
+            }
+        ],
+        "description": "Do you really need one?"
+    },
+    {
+        "id": "cit-a351f4e461104ff383d7b206a0502984",
+        "number": "458242Aa",
+        "locale": "en_US",
+        "name": "Black shirt",
+        "price": {
+            "amount": 25,
+            "currency": "CAD",
+            "label": "CA$25.00"
+        },
+        "categories": [
+            "shirt",
+            "clothing",
+            "male"
+        ],
+        "attributes": {
+            "countryOfOrigin": "Japan",
+            "brand": "Uniqlo"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "diameter": {
+                    "value": "1",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "5",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "diameter": {
+                    "value": "1",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "6",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/300/301",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "It's all black all the time."
+    },
+    {
+        "id": "cit-6cc71df071b84009b4ca57d3e4c0c476",
+        "number": "458242A3",
+        "locale": "en_US",
+        "name": "Black Sweatpants",
+        "price": {
+            "amount": 50,
+            "currency": "CAD",
+            "label": "CA$50.00"
+        },
+        "categories": [
+            "pants",
+            "clothing",
+            "male"
+        ],
+        "attributes": {
+            "countryOfOrigin": "Canada",
+            "brand": "Roots"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "diameter": {
+                    "value": "1",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "diameter": {
+                    "value": "1",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/300/301",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "Some comfy black sweatpants."
+    },
+    {
+        "id": "cit-f00a7442ccad40c194878838015302a6",
+        "number": "458242Ah",
+        "locale": "en_US",
+        "name": "Blue Sweatpants",
+        "price": {
+            "amount": 25,
+            "currency": "CAD",
+            "label": "CA$25.00"
+        },
+        "categories": [
+            "pants",
+            "clothing",
+            "male"
+        ],
+        "attributes": {
+            "brand": "Roots",
+            "countryOfOrigin": "Canada"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/300/301",
+                "tags": [
+                    "main"
+                ]
+            },
+            {
+                "url": "https://www.placecage.com/50/50",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "Some comfy blue sweatpants."
+    },
+    {
+        "id": "cit-a0b25516e90542aeac38fb5708711bbe",
+        "number": "458242Aj",
+        "locale": "en_US",
+        "name": "Blue T-Shirt",
+        "price": {
+            "amount": 35,
+            "currency": "USD",
+            "label": "US$35.00"
+        },
+        "categories": [
+            "shirt",
+            "clothing",
+            "male"
+        ],
+        "attributes": {
+            "brand": "Uniqlo",
+            "countryOfOrigin": "Japan"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/300/301",
+                "tags": [
+                    "main"
+                ]
+            },
+            {
+                "url": "https://www.placecage.com/50/50",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "Some blue t-shirt."
+    },
+    {
+        "id": "cit-592923225e904aaca0f61aea3e7bc1cb",
+        "number": "458242Ac",
+        "locale": "en_US",
+        "name": "Converse",
+        "price": {
+            "amount": 60,
+            "currency": "USD",
+            "label": "US$60.00"
+        },
+        "categories": [
+            "shoes",
+            "clothing",
+            "male"
+        ],
+        "attributes": {
+            "brand": "Converse",
+            "countryOfOrigin": "US"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/300/301",
+                "tags": [
+                    "main"
+                ]
+            },
+            {
+                "url": "https://www.placecage.com/50/50",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "Classic Cons."
+    },
+    {
+        "id": "cit-58317337973a4ab0a9cbdb40c3218b9d",
+        "number": "18",
+        "locale": "en_US",
+        "name": "Doge Bread",
+        "price": {
+            "amount": 3,
+            "currency": "USD",
+            "label": "US$3.00"
+        },
+        "categories": [
+            "doge",
+            "food",
+            "bread"
+        ],
+        "attributes": {
+            "countryOfOrigin": "Japan",
+            "brand": "Doge"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "64",
+                    "units": "inch"
+                },
+                "length": {
+                    "value": "75",
+                    "units": "inch"
+                },
+                "weight": {
+                    "value": "43",
+                    "units": "pound"
+                },
+                "width": {
+                    "value": "65",
+                    "units": "inch"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "5",
+                    "units": "inch"
+                },
+                "length": {
+                    "value": "54",
+                    "units": "inch"
+                },
+                "weight": {
+                    "value": "76",
+                    "units": "pound"
+                },
+                "width": {
+                    "value": "54",
+                    "units": "inch"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://moderndogmagazine.com/sites/default/files/styles/slidehsow-banner/public/images/articles/top_images/DogeMeme.jpg?itok=tHFvCEKV",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "Contains yummy cream filling and it's filling"
+    },
+    {
+        "id": "cit-519310fdaecc45a794caa243d42b783d",
+        "number": "453631e",
+        "locale": "en_US",
+        "name": "Doge Pringles",
+        "price": {
+            "amount": 2,
+            "currency": "USD",
+            "label": "US$2.00"
+        },
+        "categories": [
+            "food",
+            "doge",
+            "pringles"
+        ],
+        "attributes": {
+            "countryOfOrigin": "United States",
+            "brand": "Pringles"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "5",
+                    "units": "inch"
+                },
+                "diameter": {
+                    "value": "3",
+                    "units": "inch"
+                },
+                "length": {
+                    "value": "3",
+                    "units": "inch"
+                },
+                "weight": {
+                    "value": "4",
+                    "units": "pound"
+                },
+                "width": {
+                    "value": "5",
+                    "units": "inch"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "3",
+                    "units": "inch"
+                },
+                "diameter": {
+                    "value": "2",
+                    "units": "inch"
+                },
+                "length": {
+                    "value": "5",
+                    "units": "inch"
+                },
+                "weight": {
+                    "value": "5",
+                    "units": "pound"
+                },
+                "width": {
+                    "value": "6",
+                    "units": "inch"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "http://www.dailydogmemes.com/dogechip.jpg",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "Doge Flavor"
+    },
+    {
+        "id": "cit-8065c09b6f3046e1bca88b11e6099fc4",
+        "number": "495838g",
+        "locale": "en_UK",
+        "name": "fulltest",
+        "price": {
+            "amount": 33,
+            "currency": "CAD",
+            "label": "CA$33.00"
+        },
+        "categories": [
+            "works?",
+            "yessss"
+        ],
+        "attributes": {
+            "brand": "lv",
+            "gender": "male"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "6",
+                    "units": "inch"
+                },
+                "diameter": {
+                    "value": "7",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "6",
+                    "units": "inch"
+                },
+                "diameter": {
+                    "value": "7",
+                    "units": "foot"
+                },
+                "length": {
+                    "value": "56",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://i.pinimg.com/originals/af/a9/3e/afa93eed58d0e4d014b9e9ef5a11a0fe.png",
+                "tags": [
+                    "checkout"
+                ]
+            },
+            {
+                "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLN-nyeMDhhN20BKZPmhqFDsl_08Up4LCHILyayxwLrDjLpB_lzg",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "a full test"
+    },
+    {
+        "id": "cit-3f4fa4c87fd649dda1f71167b3cd6417",
+        "number": "458242Ai",
+        "locale": "en_US",
+        "name": "Green Sweatpants",
+        "price": {
+            "amount": 25,
+            "currency": "CAD",
+            "label": "CA$25.00"
+        },
+        "categories": [
+            "pants",
+            "clothing",
+            "male"
+        ],
+        "attributes": {
+            "brand": "Roots",
+            "countryOfOrigin": "Canada"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/300/301",
+                "tags": [
+                    "main"
+                ]
+            },
+            {
+                "url": "https://www.placecage.com/50/50",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "Some comfy green sweatpants."
+    },
+    {
+        "id": "cit-395907a563d64937bb6d41466138e179",
+        "number": "458242A5",
+        "locale": "en_US",
+        "name": "Grey Sweatpants",
+        "price": {
+            "amount": 25,
+            "currency": "CAD",
+            "label": "CA$25.00"
+        },
+        "categories": [
+            "pants",
+            "clothing",
+            "male"
+        ],
+        "attributes": {
+            "brand": "Roots",
+            "countryOfOrigin": "Canada"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/c/300/301",
+                "tags": [
+                    "main"
+                ]
+            },
+            {
+                "url": "https://www.placecage.com/50/50",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "Some comfy grey sweatpants."
+    },
+    {
+        "id": "cit-6863b84a89e8428b9c899a9f4b57677b",
+        "number": "6546434",
+        "locale": "en_US",
+        "name": "Item",
+        "price": {
+            "amount": 2,
+            "currency": "USD",
+            "label": "US$2.00"
+        },
+        "categories": [
+            "shirt",
+            "pants",
+            "red",
+            "yellow"
+        ],
+        "attributes": {
+            "countryOfOrigin": "United States",
+            "brand": "Uniqlo"
+        },
+        "dimensions": {
+            "packaging": {
+                "depth": {
+                    "value": "43",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "url",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "Description"
+    },
+    {
+        "id": "cit-a8fe2790ad874a78816af31286a181b0",
+        "number": "458242A6",
+        "locale": "en_US",
+        "name": "Leather Jacked",
+        "price": {
+            "amount": 25,
+            "currency": "USD",
+            "label": "US$25.00"
+        },
+        "categories": [
+            "jacket",
+            "clothing",
+            "male"
+        ],
+        "attributes": {
+            "brand": "H&M",
+            "countryOfOrigin": "US"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/300/301",
+                "tags": [
+                    "main"
+                ]
+            },
+            {
+                "url": "https://www.placecage.com/50/50",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "A leather jacket, you will be a greaser in no time."
+    },
+    {
+        "id": "cit-c6f179cffb93463bac6eba51e292e2b5",
+        "number": "458242A4",
+        "locale": "en_US",
+        "name": "Levi 501",
+        "price": {
+            "amount": 25,
+            "currency": "USD",
+            "label": "US$25.00"
+        },
+        "categories": [
+            "pants",
+            "clothing",
+            "male"
+        ],
+        "attributes": {
+            "brand": "Levi",
+            "countryOfOrigin": "US"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/300/301",
+                "tags": [
+                    "main"
+                ]
+            },
+            {
+                "url": "https://www.placecage.com/50/50",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "Classic Levi 501."
+    },
+    {
+        "id": "cit-7b691e5714064b8ca5f5f27c910e38cd",
+        "number": "435326a",
+        "locale": "en_US",
+        "name": "Moving Shirt",
+        "price": {
+            "amount": 40,
+            "currency": "USD",
+            "label": "US$40.00"
+        },
+        "categories": [
+            "shirt",
+            "white",
+            "doge",
+            "moving",
+            "animal"
+        ],
+        "attributes": {
+            "countryOfOrigin": "Japan",
+            "brand": "Doge"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "5",
+                    "units": "inch"
+                },
+                "length": {
+                    "value": "5",
+                    "units": "inch"
+                },
+                "weight": {
+                    "value": "6",
+                    "units": "pound"
+                },
+                "width": {
+                    "value": "4",
+                    "units": "inch"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "5",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "5",
+                    "units": "inch"
+                },
+                "weight": {
+                    "value": "5",
+                    "units": "pound"
+                },
+                "width": {
+                    "value": "4",
+                    "units": "inch"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://media.giphy.com/media/RZjnV5zIT5MC4/giphy.gif",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "Graphic shirt but we uploaded a .gif file"
+    },
+    {
+        "id": "cit-37362d0e628c4a978518da8b1ed0f24d",
+        "number": "458242A1",
+        "locale": "en_US",
+        "name": "Nice Shirt",
+        "price": {
+            "amount": 25,
+            "currency": "CAD",
+            "label": "CA$25.00"
+        },
+        "categories": [
+            "shirt",
+            "clothing",
+            "male"
+        ],
+        "attributes": {
+            "brand": "Roots",
+            "countryOfOrigin": "Canada"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/300/301",
+                "tags": [
+                    "main"
+                ]
+            },
+            {
+                "url": "https://www.placecage.com/50/50",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "A really really nice shirt"
+    },
+    {
+        "id": "cit-5da1d3c9d96d41458ebcc65a01a46651",
+        "number": "458242Ae",
+        "locale": "en_US",
+        "name": "Onyx Hoodie",
+        "price": {
+            "amount": 25,
+            "currency": "CAD",
+            "label": "CA$25.00"
+        },
+        "categories": [
+            "shirt",
+            "sweater",
+            "clothing",
+            "male"
+        ],
+        "attributes": {
+            "brand": "H&M",
+            "countryOfOrigin": "US"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/c/300/301",
+                "tags": [
+                    "main"
+                ]
+            },
+            {
+                "url": "https://www.placecage.com/50/50",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "Onyx, you know this is cool."
+    },
+    {
+        "id": "cit-3823546bbe954f0fa405d159500a9ace",
+        "number": "458242Al",
+        "locale": "en_US",
+        "name": "Pink Sweatpants",
+        "price": {
+            "amount": 25,
+            "currency": "CAD",
+            "label": "CA$25.00"
+        },
+        "categories": [
+            "pants",
+            "clothing",
+            "male"
+        ],
+        "attributes": {
+            "brand": "Roots",
+            "countryOfOrigin": "Canada"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/c/300/301",
+                "tags": [
+                    "checkout"
+                ]
+            },
+            {
+                "url": "https://www.placecage.com/50/50",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "Some comfy pink sweatpants."
+    },
+    {
+        "id": "cit-c08fd61406e34082bf2c121cd853dbeb",
+        "number": "123452TRE",
+        "locale": "en_US",
+        "name": "Plain T-Shirt",
+        "price": {
+            "amount": 25,
+            "currency": "USD",
+            "label": "US$25.00"
+        },
+        "categories": [
+            "clothing",
+            "male",
+            "shirt"
+        ],
+        "attributes": {
+            "material": "cotton"
+        },
+        "dimensions": {
+            "product": {
+                "length": {
+                    "value": "20",
+                    "units": "inch"
+                },
+                "weight": {
+                    "value": "1.15",
+                    "units": "pound"
+                },
+                "width": {
+                    "value": "10",
+                    "units": "inch"
+                }
+            },
+            "packaging": {
+                "length": {
+                    "value": "20",
+                    "units": "inch"
+                },
+                "weight": {
+                    "value": "1.15",
+                    "units": "pound"
+                },
+                "width": {
+                    "value": "10",
+                    "units": "inch"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/c/300/301",
+                "tags": [
+                    "main"
+                ]
+            },
+            {
+                "url": "https://www.placecage.com/50/50",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "Plain ole t-shirt"
+    },
+    {
+        "id": "cit-13297855f2944ca79f02f8286877d69b",
+        "number": "458242A7",
+        "locale": "en_US",
+        "name": "Puffy Jacket",
+        "price": {
+            "amount": 25,
+            "currency": "CAD",
+            "label": "CA$25.00"
+        },
+        "categories": [
+            "jacket",
+            "clothing",
+            "male"
+        ],
+        "attributes": {
+            "brand": "Uniqlo",
+            "countryOfOrigin": "Japan"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/c/300/301",
+                "tags": [
+                    "main"
+                ]
+            },
+            {
+                "url": "https://www.placecage.com/50/50",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "So much puff."
+    },
+    {
+        "id": "cit-fa26b8779e864ea5acce7467b9a3b74b",
+        "number": "458242Ak",
+        "locale": "en_US",
+        "name": "Salt and Pepper Sweatpants",
+        "price": {
+            "amount": 25,
+            "currency": "CAD",
+            "label": "CA$25.00"
+        },
+        "categories": [
+            "pants",
+            "clothing",
+            "male"
+        ],
+        "attributes": {
+            "brand": "Roots",
+            "countryOfOrigin": "Canada"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "10",
+                    "units": "centimeter"
+                },
+                "length": {
+                    "value": "50",
+                    "units": "centimeter"
+                },
+                "weight": {
+                    "value": "1",
+                    "units": "kilogram"
+                },
+                "width": {
+                    "value": "15",
+                    "units": "centimeter"
+                }
+            }
+        },
+        "images": [
+            {
+                "url": "https://www.placecage.com/c/300/301",
+                "tags": [
+                    "main"
+                ]
+            },
+            {
+                "url": "https://www.placecage.com/50/50",
+                "tags": [
+                    "thumbnail"
+                ]
+            }
+        ],
+        "description": "Classic salt and pepper."
+    },
+    {
+        "id": "cit-c40cadd83b2c4902bf133761113df0b8",
+        "number": "17",
+        "locale": "en_US",
+        "name": "Sicker Jeans",
+        "price": {
+            "amount": 250,
+            "currency": "USD",
+            "label": "US$250.00"
+        },
+        "categories": [
+            "clothing",
+            "pants"
+        ],
+        "attributes": {
+            "brand": "Test"
+        },
+        "dimensions": {
+            "product": {
+                "depth": {
+                    "value": "3",
+                    "units": "inch"
+                },
+                "length": {
+                    "value": "26",
+                    "units": "inch"
+                },
+                "weight": {
+                    "value": "7",
+                    "units": "pound"
+                },
+                "width": {
+                    "value": "10",
+                    "units": "inch"
+                }
+            },
+            "packaging": {
+                "depth": {
+                    "value": "2",
+                    "units": "inch"
+                },
+                "length": {
+                    "value": "23",
+                    "units": "inch"
+                },
+                "weight": {
+                    "value": "4",
+                    "units": "pound"
+                },
+                "width": {
+                    "value": "10",
+                    "units": "inch"
+                }
+            }
+        },
+        "images": [],
+        "description": "Stuff and text and things"
+    }
+]
