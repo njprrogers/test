@@ -1,5 +1,5 @@
 {
-  "name": "create-react-app-redux",
+  "name": "front-end-flow",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -38,9 +38,6 @@
   },
   "homepage": "https://cra-redux-router-thunk.herokuapp.com",
   "lint-staged": {
-    "*.{js,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.{js,json,css,md}": ["prettier --write", "git add"]
   }
 }

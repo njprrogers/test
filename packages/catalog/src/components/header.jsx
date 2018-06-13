@@ -9,13 +9,15 @@ const Header = () => (
   <div>
     <header>
       <div className="container">
+        <nav className="">
+          <Link href="#/" to="/">Home</Link>
+          <Link href="#add-item" to="/add-item">Add Item</Link>
+          <Link href="/about-us" to="/about-us">About</Link>
+        </nav>
         <div className="logo">
           <img className="img1" src="https://www.flow.io/wp-content/themes/flow/assets/img/logo-branco-part1.png" />
           <img className="img2" src="https://www.flow.io/wp-content/themes/flow/assets/img/logo-branco-part2.png" />
         </div>
-        <Link href="#/" to="/">Home</Link>
-        <Link href="#add-item" to="/add-item">Add Item</Link>
-        <Link href="/about-us" to="/about-us">About</Link>
       </div>
     </header>
     <main className="container">
