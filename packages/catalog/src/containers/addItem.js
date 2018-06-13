@@ -138,16 +138,14 @@ class CatalogForm extends Component {
 
                 <h2>Categories</h2>
                 <fieldset>
-                  <button
-                    onClick={() => formApi.addValue("categories", "")}
-                    type="button"
-                    className="mb-4 mr-4 btn btn-success"
-                  >
-                    + Add Category
-                  </button>
+                  <label htmlFor="category-first">Category</label>
+                  <Text field="category-first" id="image-url-first" />
                   {formApi.values.categories &&
                     formApi.values.categories.map((category, i) => (
-                      <div key={`category${i}`}>
+                      <div
+                        key={`category${i}`}
+                        className="additional-field-divider"
+                      >
                         <label htmlFor={`category-name-${i}`}>Category</label>
                         <Text
                           field={["categories", i]}
@@ -156,12 +154,19 @@ class CatalogForm extends Component {
                         <button
                           onClick={() => formApi.removeValue("categories", i)}
                           type="button"
-                          className="mb-4 btn btn-danger"
+                          className="btn btn-danger remove-button"
                         >
                           - Remove
                         </button>
                       </div>
                     ))}
+                  <button
+                    type="button"
+                    onClick={() => formApi.addValue("categories", "")}
+                    className="add-button btn btn-success"
+                  >
+                    + Add categories
+                  </button>
                 </fieldset>
                 <h2>Images</h2>
                 <fieldset>
@@ -196,7 +201,7 @@ class CatalogForm extends Component {
                     }}
                     className="add-button btn btn-success"
                   >
-                    + Add Images
+                    + Add images
                   </button>
                 </fieldset>
                 <div className="row">
