@@ -1,0 +1,318 @@
+import React, { Component } from "react";
+import { Form, Text, Select, NestedField } from "react-form";
+import "../css/forms.css";
+import itemsClient from "../client";
+import Loader from "./loader";
+import MultiFields from "./multiFields";
+
+const required = (field, name) => {
+  if (!field || field.trim() === "") {
+    return "Please enter a value";
+  }
+};
+
+class CatalogForm extends Component {
+  constructor(props) {
+    super(props);
+    this.submitForm = this.submitForm.bind(this);
+    this.state = {
+      formError: "",
+      formErrorMsg: ""
+    };
+  }
+  transformValues(submittedValues) {
+    let body = {};
+    let images = [];
+
+    submittedValues.images &&
+      submittedValues.images.forEach((image, index) => {
+        images.push({
+          url: image,
+          tags: [submittedValues["images-tag"][index] || ""]
+        });
+      });
+    body = {
+      number: submittedValues.number,
+      locale: submittedValues.locale,
+      currency: submittedValues.currency,
+      name: submittedValues.name,
+      price: submittedValues.price,
+      description: submittedValues.description,
+      categories: submittedValues.categories.category,
+      images: images
+    };
+    return body;
+  }
+  submitForm(submittedValues) {
+    let opts = {};
+    this.setState({ submittedValues });
+    opts.body = this.transformValues(submittedValues);
+
+    itemsClient
+      .post("frontend-exercises", opts)
+      .then(response => {
+        if (!response.ok) {
+          this.setState({
+            formError: true,
+            formErrorMsg: response.result.messages[0]
+          });
+        } else {
+          this.setState({
+            formError: false,
+            formErrorMsg: "",
+            success: true
+          });
+        }
+        this.setState({ success: true });
+      })
+      .catch(e => {
+        this.setState({
+          formError: true,
+          formErrorMsg: e.messages
+        });
+      });
+    console.log("submit form", opts);
+  }
+
+  componentWillMount() {}
+  componentDidMount() {
+    console.log("MOUNTE£D");
+    console.log(this);
+  }
+  render() {
+    const { currencies, loading, item, edit, number } = this.props;
+    let defaultValues = {};
+    console.log(item);
+    const { formError, formErrorMsg } = this.state;
+    if (item) {
+      defaultValues = {
+        number: item.number,
+        name: item.name,
+        locale: item.locale,
+        description: item.description,
+        currency: item.price.currency,
+        price: item.price.amount,
+        category: item.categories,
+        categories: {
+          category: item.categories
+        }
+      };
+    }
+    console.log(item);
+    return (
+      <div>
+        {loading ? (
+          <Loader />
+        ) : (
+          <div className="container main">
+            <h1>{edit ? "Edit" : "Add"} a Catalog Item</h1>
+            <Form onSubmit={this.submitForm} defaultValues={defaultValues}>
+              {formApi => (
+                <div>
+                  <form onSubmit={formApi.submitForm}>
+                    <fieldset>
+                      <div className="row">
+                        <div className="field">
+                          <label htmlFor="number">Clients unique ID</label>
+                          <Text
+                            validate={required}
+                            field="number"
+                            title="Clients unique ID"
+                            className={
+                              formApi.errors && formApi.errors.number
+                                ? "error"
+                                : null
+                            }
+                          />
+                          {formApi.errors ? (
+                            <p className="form-error">
+                              {formApi.errors.number}
+                            </p>
+                          ) : null}
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="field">
+                          <label htmlFor="locale">Locale</label>
+                          <Text
+                            validate={required}
+                            field="locale"
+                            title="Locale"
+                            className={
+                              formApi.errors && formApi.errors.locale
+                                ? "error"
+                                : null
+                            }
+                          />
+                          {formApi.errors ? (
+                            <p className="form-error">
+                              {formApi.errors.locale}
+                            </p>
+                          ) : null}
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="field">
+                          <label htmlFor="name">Name</label>
+                          <Text
+                            validate={required}
+                            field="name"
+                            title="Name of the actual item in the catalog"
+                            className={
+                              formApi.errors && formApi.errors.name
+                                ? "error"
+                                : null
+                            }
+                          />
+                          {formApi.errors ? (
+                            <p className="form-error">{formApi.errors.name}</p>
+                          ) : null}
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="field">
+                          <label htmlFor="currency">Currency</label>
+                          <Select
+                            validate={required}
+                            field="currency"
+                            title="Currency"
+                            options={currencies}
+                            className={
+                              formApi.errors && formApi.errors.currency
+                                ? "error"
+                                : null
+                            }
+                          />
+                          {formApi.errors ? (
+                            <p className="form-error">
+                              {formApi.errors.currency}
+                            </p>
+                          ) : null}
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="field">
+                          <label htmlFor="price">Price</label>
+                          <Text
+                            validate={required}
+                            field="price"
+                            type="number"
+                            title="Price"
+                            className={
+                              formApi.errors && formApi.errors.price
+                                ? "error"
+                                : null
+                            }
+                          />
+                          {formApi.errors ? (
+                            <p className="form-error">{formApi.errors.price}</p>
+                          ) : null}
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="field">
+                          <label htmlFor="description">Description</label>
+                          <Text field="description" title="Description" />
+                        </div>
+                      </div>
+                    </fieldset>
+
+                    <h2>Categories</h2>
+                    <NestedField field="categories">
+                      <MultiFields name="category" formApi={formApi} />
+                    </NestedField>
+                    <h2>Images</h2>
+                    <fieldset>
+                      {formApi.values.images &&
+                        formApi.values.images.map((image, i) => (
+                          <div
+                            key={`image${i}`}
+                            className="additional-field-divider"
+                          >
+                            <label htmlFor={`image-url-${i}`}>Image url</label>
+                            <Text field={["images", i]} id={`image-url-${i}`} />
+                            <label htmlFor={`image-tag-${i}`}>Image tag</label>
+                            <Select
+                              validate={required}
+                              field={["images-tag", i]}
+                              title={["images-tag", i]}
+                              options={[
+                                {
+                                  label: "thumbnail",
+                                  value: "thumbnail"
+                                },
+                                {
+                                  label: "checkout",
+                                  value: "checkout"
+                                }
+                              ]}
+                              className={
+                                formApi.errors && formApi.errors.currency
+                                  ? "error"
+                                  : null
+                              }
+                            />
+                            <button
+                              onClick={() => formApi.removeValue("images", i)}
+                              type="button"
+                              className="btn btn-danger remove-button"
+                            >
+                              - Remove
+                            </button>
+                          </div>
+                        ))}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          formApi.addValue("images-tag", "");
+                          formApi.addValue("images", "");
+                        }}
+                        className="add-button btn btn-success"
+                      >
+                        + Add images
+                      </button>
+                    </fieldset>
+                    <p className="error-msg">{formErrorMsg}</p>
+                    <button type="submit" className="btn submit">
+                      Submit
+                    </button>
+                  </form>
+                </div>
+              )}
+            </Form>
+          </div>
+        )}
+      </div>
+    );
+  }
+}
+
+export default CatalogForm;
+/*
+
+item
+
+Example Json: Minimal | Full
+The Flow item defines a specific item that can be purchased by a consumer. For many clients, this will map to a Sku.
+
+Field	Type	Required?	Default	Description
+id	string	Yes	-	
+Globally unique identifier
+
+number	string	Yes	-	
+Client’s unique identifier for this object
+
+locale	string	Yes	-	
+Example: en_US
+name	string	Yes	-	
+price	price	Yes	-	
+categories	[string]	Yes	[]	
+description	string	No	-	
+attributes	map[string]	Yes	{}	
+Attributes of the items. An attribute of type intent must be given as a string representation of a decimal to be correctly localized.
+
+dimensions	dimensions	Yes	-	
+images	[image]	Yes	[]	
+local	local	No	-	
+
+*/

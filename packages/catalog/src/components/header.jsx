@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import Home from '../containers/home';
 import About from '../containers/about';
-import AddItem from '../containers/addItem';
+import UpsertItemContainer from '../containers/upsertItemContainer';
 import '../css/home.css';
 
 const Header = () => (
@@ -11,7 +11,7 @@ const Header = () => (
       <div className="container">
         <nav className="">
           <Link href="#/" to="/">Home</Link>
-          <Link href="#add-item" to="/add-item">Add Item</Link>
+          <Link href="#upsert-item" to="/upsert-item">Add Item</Link>
           <Link href="/about-us" to="/about-us">About</Link>
         </nav>
         <div className="logo">
@@ -22,7 +22,8 @@ const Header = () => (
     </header>
     <main className="container">
       <Route exact path="/" component={Home} />
-      <Route exact path="/add-item" component={AddItem} />
+      <Route path="/upsert-item/:number" component={UpsertItemContainer} />
+      <Route exact path="/upsert-item" component={UpsertItemContainer} />
       <Route exact path="/about-us" component={About} />
     </main>
   </div>

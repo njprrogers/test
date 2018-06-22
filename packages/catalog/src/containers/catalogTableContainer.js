@@ -1,13 +1,12 @@
-
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { push } from 'react-router-redux';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { getCatalog } from '../actions';
-import CatalogTable from '../components/catalogTable';
-import { getVisibleItems } from '../reducers';
-import itemPropType from '../components/propTypes/item';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { push } from "react-router-redux";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { getCatalog, deleteCatalogItem, editCatalogItem } from "../actions";
+import CatalogTable from "../components/catalogTable";
+import { getVisibleItems } from "../reducers";
+import itemPropType from "../components/propTypes/item";
 
 // const mapStateToProps = state => ({
 //   count: state.counter.count,
@@ -20,7 +19,7 @@ const mapStateToProps = function mapStateToProps(state, ownProps) {
   console.log(state);
   return {
     // items: state.catalog.items,
-    items: getVisibleItems(state.catalog, state.catalog.searchTerm), 
+    items: getVisibleItems(state.catalog, state.catalog.searchTerm),
     isLoading: state.catalog.isLoading
   };
 };
@@ -28,17 +27,26 @@ const mapStateToProps = function mapStateToProps(state, ownProps) {
 class CatalogTableContainer extends Component {
   // constructor(props){
   //  super(props)
-  // } 
+  // }
   componentDidMount() {
     /* do something */
     this.props.getCatalog();
   }
   render() {
-    const { isLoading, items } = this.props;
+    const {
+      isLoading,
+      items,
+      deleteCatalogItem,
+      editCatalogItem,
+      editPage
+    } = this.props;
     return (
       <CatalogTable
         items={items}
         isLoading={isLoading}
+        deleteCatalogItem={deleteCatalogItem}
+        editCatalogItem={editCatalogItem}
+        editPage={editPage}
       />
     );
   }
@@ -47,7 +55,13 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       getCatalog,
-      changePage: () => push('/about-us')
+      deleteCatalogItem,
+      editCatalogItem,
+      changePage: () => push("/about-us"),
+      editPage: e => {
+        console.log(e);
+        push("/upsert-item");
+      }
     },
     dispatch
   );
@@ -61,4 +75,6 @@ CatalogTableContainer.defaultProps = {
   isLoading: true
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CatalogTableContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(
+  CatalogTableContainer
+);

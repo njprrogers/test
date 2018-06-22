@@ -10,13 +10,26 @@ label {
   font-size: 13px;
   color: rgb(163, 156, 156);
 }
-
+h1 {
+  margin-bottom: 20px;
+}
+h2 {
+  font-weight: normal;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
 input {
   margin: 5px 0 10px 0;
   width: 100%;
   padding: 5px;
   font-size: 16px;
   color: #333;
+  border: 1px solid #ccc;
+}
+select {
+  width: 100%;
+  margin: 5px 0 10px 0;
+  padding: 5px;
   border: 1px solid #ccc;
 }
 input.error {
@@ -28,7 +41,7 @@ input:focus {
 fieldset {
   border: none;
   border-bottom: 1px solid #ccc;
-  margin: 20px 0;
+  margin: 15px 0 15px 0;
 }
 .form-error {
   color: red;
@@ -50,6 +63,16 @@ fieldset {
 .additional-field-divider {
   border-top: 1px solid #ccc;
   border: 1px solid #ccc;
-  padding: 20px;
+  padding: 20px 40px;
   margin: 20px 0;
+}
+.submit.btn {
+  background: darkorange;
+  color: white;
+  font-size: 16px;
+  padding: 5px 15px;
+  margin-top: 20px;
+}
+.error-msg {
+  color: red;
 }
