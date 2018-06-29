@@ -1,6 +1,6 @@
 ## App description
 
-This app allows the user to browse, add to, update and search the items catalog from flow. The app is written in React and Redux. I've chosen to use Redux for the browse and search page but not for the form page.
+This app allows the user to browse, add to, update and search the items catalog from flow. The app is written in React and Redux using the Container pattern. I've chosen to use Redux for the browse and search page. I didn't feel the form page needed Redux so I just used React state directly.
 
 For the forms, I've used the react-forms (https://react-form.js.org/#/) library. It has a nice API and lots of nice free stuff around validation / errors / successes.
 
@@ -16,7 +16,13 @@ yarn install
 yarn start
 ```
 
-I've organised the application's folder structure according to it's size and simplicity. If this was to scale up, I'd probably break the components out into other folders e.g. Forms / Scenes etc.
+### Folder structure
+
+I've organised the application's folder structure according to it's size and simplicity. If this was to scale up, I'd probably break the components out into further folders e.g. Forms / Scenes etc.
+
+### Styling
+
+I've kept it simple, just using vanilla css.
 
 ## Instructions
 
