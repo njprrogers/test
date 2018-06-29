@@ -33,7 +33,6 @@ class CatalogForm extends Component {
       loading,
       item,
       edit,
-      formError,
       formErrorMsg,
       success
     } = this.props;
@@ -53,7 +52,7 @@ class CatalogForm extends Component {
         }
       };
     }
-    console.log(item);
+
     return (
       <div>
         {loading ? (

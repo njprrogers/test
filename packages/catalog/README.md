@@ -1,8 +1,28 @@
+## App description
+
+This app allows the user to browse, add to, update and search the items catalog from flow. The app is written in React and Redux. I've chosen to use Redux for the browse and search page but not for the form page.
+
+For the forms, I've used the react-forms (https://react-form.js.org/#/) library. It has a nice API and lots of nice free stuff around validation / errors / successes.
+
+I used create-react-app to create the app.
+
+To get up and running:
+
+```
+yarn install
+```
+
+```
+yarn start
+```
+
+I've organised the application's folder structure according to it's size and simplicity. If this was to scale up, I'd probably break the components out into other folders e.g. Forms / Scenes etc.
+
 ## Instructions
 
-1. Fork this repository to your own GitHub account.
-2. Complete the exercise below and provide information on how to run the application as well anything else you deem worthy of explaining to the person reviewing your code.
-3. When ready, submit a link to your fork by replying to the original email from Flow. Do not create a pull request back to the `flowcommerce` source.
+1.  Fork this repository to your own GitHub account.
+2.  Complete the exercise below and provide information on how to run the application as well anything else you deem worthy of explaining to the person reviewing your code.
+3.  When ready, submit a link to your fork by replying to the original email from Flow. Do not create a pull request back to the `flowcommerce` source.
 
 ## Requirements
 
@@ -54,6 +74,7 @@ For this exercise, you will be using [Flow Commerce API](https://app.apibuilder.
 Flow's representation of all items in a client's product catalog. Provides create, update, and delete (CRUD) operations as well as utility methods including item history. Refer to the [Flow Commerce Item API](https://app.apibuilder.io/flow/api/latest#resource-item) specifications for additional information.
 
 #### `GET /:organization/catalog/items`
+
 Search items. Always paginated.
 
 ##### Example Request:
@@ -63,6 +84,7 @@ curl -u xoxWLyodJsCF9CBVlOTDC48XJxBTpH9rTOgWhcEQ2XdcO8PmzblIziwKHUMRwfVpD7eqHAtP
 ```
 
 #### `POST /:organization/catalog/items`
+
 Add catalog item(s)
 
 ##### Example Request:
@@ -104,6 +126,7 @@ body.json:
 ```
 
 #### `GET /:organization/catalog/items/:number`
+
 Returns information about a specific item.
 
 ##### Example Request:
@@ -113,8 +136,8 @@ curl -u xoxWLyodJsCF9CBVlOTDC48XJxBTpH9rTOgWhcEQ2XdcO8PmzblIziwKHUMRwfVpD7eqHAtP
 ```
 
 #### `PUT /:organization/catalog/items/:number`
-Update item with the specified number, creating if it does not exist.
 
+Update item with the specified number, creating if it does not exist.
 
 ##### Example Request:
 
@@ -155,6 +178,7 @@ body.json:
 ```
 
 #### `DELETE /:organization/catalog/items/:number`
+
 Delete the item with this number
 
 ```bash
@@ -166,6 +190,7 @@ curl -X DELETE -u xoxWLyodJsCF9CBVlOTDC48XJxBTpH9rTOgWhcEQ2XdcO8PmzblIziwKHUMRwf
 Search API provides merchants with the ability to find items using basic queries or keywords followed by a `:` for any field contained in their product catalog. For example, `Category:Jeans` will result in all the products that belong to the Jeans category. Refer to the [Flow Commerce Search API](https://app.apibuilder.io/flow/api/latest#resource-document) specifications for additional information.
 
 #### `GET /:organization/search/catalog`
+
 Find items matching the specified query.
 
 ```bash

@@ -22,7 +22,6 @@ class UpsertItemContainer extends Component {
   getCurrencies() {
     // Calling out to https://api.flow.io/reference/currencies
     return currenciesClient.get().then(data => {
-      console.log(data);
       let currencies = [];
       data.result.forEach(element => {
         currencies.push({
@@ -72,13 +71,11 @@ class UpsertItemContainer extends Component {
       .then(response => {
         if (!response.ok) {
           this.setState({
-            formError: true,
             formErrorMsg: response.result.messages[0],
             success: false
           });
         } else {
           this.setState({
-            formError: false,
             formErrorMsg: "",
             success: true
           });
@@ -86,8 +83,8 @@ class UpsertItemContainer extends Component {
       })
       .catch(e => {
         this.setState({
-          formError: true,
-          formErrorMsg: e.messages
+          formErrorMsg: e.messages,
+          success: false
         });
       });
     console.log("update submit form", opts);
@@ -98,13 +95,11 @@ class UpsertItemContainer extends Component {
       .then(response => {
         if (!response.ok) {
           this.setState({
-            formError: true,
             formErrorMsg: response.result.messages[0],
             success: false
           });
         } else {
           this.setState({
-            formError: false,
             formErrorMsg: "",
             success: true
           });
@@ -112,8 +107,8 @@ class UpsertItemContainer extends Component {
       })
       .catch(e => {
         this.setState({
-          formError: true,
-          formErrorMsg: e.messages
+          formErrorMsg: e.messages,
+          success: false
         });
       });
     console.log("submit form", opts);
@@ -131,7 +126,6 @@ class UpsertItemContainer extends Component {
     } else {
       this.setState({ edit: true });
     }
-
     // If we are editing, load the item
     itemsClient.getByNumber("frontend-exercises", number).then(item => {
       this.setState({ item: item.result, loading: false });
