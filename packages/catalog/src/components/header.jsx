@@ -1,9 +1,11 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
-import Home from '../containers/home';
-import About from '../containers/about';
+import Home from '../containers/homeContainer';
+import About from '../components/about';
 import UpsertItemContainer from '../containers/upsertItemContainer';
 import '../css/home.css';
+import imgPath1 from '../images/logo-branco-part1.png';
+import imgPath2 from '../images/logo-branco-part2.png';
 
 const Header = () => (
   <div>
@@ -15,8 +17,8 @@ const Header = () => (
           <Link href="/about-us" to="/about-us">About</Link>
         </nav>
         <div className="logo">
-          <img className="img1" src="https://www.flow.io/wp-content/themes/flow/assets/img/logo-branco-part1.png" />
-          <img className="img2" src="https://www.flow.io/wp-content/themes/flow/assets/img/logo-branco-part2.png" />
+          <img className="img1" src={imgPath1} />
+          <img className="img2" src={imgPath2} />
         </div>
       </div>
     </header>

@@ -1,4 +1,4 @@
-import itemsClient from "../client";
+import { itemsClient, documentsClient } from "../client";
 
 export const SEARCH_CATALOG = "SEARCH_CATALOG";
 export function searchCatalog(subreddit) {
@@ -12,6 +12,13 @@ export function updateSearchTerm(searchTerm) {
   return {
     type: UPDATE_SEARCH_TERM,
     searchTerm
+  };
+}
+export const UPDATE_SEARCH_TYPE = "UPDATE_SEARCH_TYPE";
+export function updateSearchType(searchType) {
+  return {
+    type: UPDATE_SEARCH_TERM,
+    searchType
   };
 }
 export const FETCH_CATALOG = "FETCH_CATALOG";
@@ -64,6 +71,7 @@ export function getCatalog() {
 
     // In this case, we return a promise to wait for.
     // This is not required by thunk middleware, but it is convenient for us.
+
     dispatch(fetchCatalog());
     return itemsClient
       .get("frontend-exercises")
@@ -118,4 +126,40 @@ export function deleteCatalogItem(e) {
         dispatch(deleteComplete(number))
       );
   };
+}
+export function searchCatalogItems(searchTerm) {
+  return function dispatchIt(dispatch, getState) {
+    dispatch(updateSearchTerm(searchTerm));
+    const state = getState();
+    const searchQuery = getSearchQuery(state.searchType, searchTerm);
+    dispatch(fetchCatalog());
+    return documentsClient
+      .getCatalog("frontend-exercises", {
+        params: {
+          q: searchQuery
+        }
+      })
+      .then(
+        response => response,
+        error => console.log("An error occurred.", error)
+      )
+      .then(response => {
+        dispatch(receiveCatalog(response));
+      });
+  };
+}
+function getSearchQuery(searchType, searchTerm) {
+  if (searchType === "all") {
+    return searchTerm;
+  }
+  if (!isNaN(searchTerm)) {
+    return `number:${searchTerm}`;
+  }
+  if (searchType === "category") {
+    return `category:${searchTerm}`;
+  }
+  if (searchType === "brand") {
+    return `brand:${searchTerm}`;
+  }
+  return searchTerm;
 }

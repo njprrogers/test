@@ -18,8 +18,8 @@ import itemPropType from "../components/propTypes/item";
 const mapStateToProps = function mapStateToProps(state, ownProps) {
   console.log(state);
   return {
-    // items: state.catalog.items,
-    items: getVisibleItems(state.catalog, state.catalog.searchTerm),
+    items: state.catalog.items,
+    // items: getVisibleItems(state.catalog, state.catalog.searchTerm, state.catalog.searchType),
     isLoading: state.catalog.isLoading
   };
 };

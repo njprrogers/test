@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import UpsertItem from "../components/upsertItem";
 import currenciesClient from "../client/currencies";
-import itemsClient from "../client";
+import { itemsClient } from "../client";
 
 class UpsertItemContainer extends Component {
   constructor(props) {
@@ -12,8 +12,12 @@ class UpsertItemContainer extends Component {
       loading: true,
       number: null,
       currencies: [],
-      edit: false
+      edit: false,
+      formError: false,
+      formErrorMsg: "",
+      success: null
     };
+    this.submitForm = this.submitForm.bind(this);
   }
   getCurrencies() {
     // Calling out to https://api.flow.io/reference/currencies
@@ -28,6 +32,91 @@ class UpsertItemContainer extends Component {
       });
       return currencies;
     });
+  }
+  transformValues(submittedValues) {
+    let body = {};
+    let images = [];
+
+    submittedValues.images &&
+      submittedValues.images.forEach((image, index) => {
+        images.push({
+          url: image,
+          tags: [submittedValues["images-tag"][index] || ""]
+        });
+      });
+    body = {
+      number: submittedValues.number,
+      locale: submittedValues.locale,
+      currency: submittedValues.currency,
+      name: submittedValues.name,
+      price: submittedValues.price,
+      description: submittedValues.description,
+      categories: submittedValues.categories.category,
+      images: images
+    };
+    return body;
+  }
+  submitForm(submittedValues) {
+    let opts = {};
+    // this.setState({ submittedValues });
+    opts.body = this.transformValues(submittedValues);
+    if (this.state.edit) {
+      this.updateItem(opts);
+    } else {
+      this.addItem(opts);
+    }
+  }
+  updateItem(opts) {
+    itemsClient
+      .putByNumber("frontend-exercises", opts.body.number, opts)
+      .then(response => {
+        if (!response.ok) {
+          this.setState({
+            formError: true,
+            formErrorMsg: response.result.messages[0],
+            success: false
+          });
+        } else {
+          this.setState({
+            formError: false,
+            formErrorMsg: "",
+            success: true
+          });
+        }
+      })
+      .catch(e => {
+        this.setState({
+          formError: true,
+          formErrorMsg: e.messages
+        });
+      });
+    console.log("update submit form", opts);
+  }
+  addItem(opts) {
+    itemsClient
+      .post("frontend-exercises", opts)
+      .then(response => {
+        if (!response.ok) {
+          this.setState({
+            formError: true,
+            formErrorMsg: response.result.messages[0],
+            success: false
+          });
+        } else {
+          this.setState({
+            formError: false,
+            formErrorMsg: "",
+            success: true
+          });
+        }
+      })
+      .catch(e => {
+        this.setState({
+          formError: true,
+          formErrorMsg: e.messages
+        });
+      });
+    console.log("submit form", opts);
   }
   componentDidMount() {
     // Load currencies
@@ -49,7 +138,16 @@ class UpsertItemContainer extends Component {
     });
   }
   render() {
-    const { item, loading, currencies, edit, number } = this.state;
+    const {
+      item,
+      loading,
+      currencies,
+      edit,
+      number,
+      formError,
+      formErrorMsg,
+      success
+    } = this.state;
     return (
       <UpsertItem
         item={item}
@@ -57,6 +155,10 @@ class UpsertItemContainer extends Component {
         currencies={currencies}
         edit={edit}
         number={number}
+        submitForm={this.submitForm}
+        formError={formError}
+        formErrorMsg={formErrorMsg}
+        success={success}
       />
     );
   }

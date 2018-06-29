@@ -6,7 +6,7 @@ import Loader from './loader';
 
 
 const CatalogTable = (props) => {
-  const { items, deleteCatalogItem, editPage, isLoading } = props;
+  const { items, deleteCatalogItem, isLoading } = props;
   return (
 
     <div className='container'>
@@ -24,45 +24,50 @@ const CatalogTable = (props) => {
             <th>Price</th>
             <th>Image</th>
             <th>Categories</th>
-            <th colspan="2">Actions</th>
+            <th colspan='2'>Actions</th>
           </tr>
-
           {
-            items.map((item) => {
-              return (
-                <tr key={item.id}>
-                  <td>{item.number}</td>
-                  <td>{item.attributes.brand}</td>
-                  <td>{item.name}</td>
-                  <td>{item.description}</td>
-                  <td>{item.price.label}</td>
-                  <td>
-                    {
-                      item.images.filter((image) => {
-                        return image.tags.includes('thumbnail');
-                      }).map((thumbNail) => {
-                        return (
-                          <img src={thumbNail.url} width="25" height="25" alt="thumbnail" />
-                        );
-                      })
-                    }
-                  </td>
-                  <td className="category">
-                    {
-                      item.categories.map((category) => {
-                        return <span className="category-item">{category}</span>;
-                      })
-                    }
-                  </td>
-                  <td align="center">
-                    <a className="delete" data-number={item.number} onClick={deleteCatalogItem} title="Delete"><i class="far fa-trash-alt"></i></a>
-                  </td>
-                  <td align="center">
-                    <Link to={`/upsert-item/${item.number}`}><i class="far fa-edit"></i></Link>
-                  </td>
+            items.length ? 
+              items.map((item) => {
+                return (
+                  <tr key={item.id}>
+                    <td>{item.number}</td>
+                    <td>{item.attributes.brand}</td>
+                    <td>{item.name}</td>
+                    <td>{item.description}</td>
+                    <td>{item.price && item.price.label}</td>
+                    <td className="images">
+                      {
+                        // bad data in the api (images not an array)
+                        item.images && Array.isArray(item.images) && item.images.filter((image) => {
+                          return image.tags.includes('thumbnail');
+                        }).map((thumbNail) => {
+                          return (
+                            <img src={thumbNail.url} width='25' height='25' alt='thumbnail' />
+                          );
+                        })
+                      }
+                    </td>
+                    <td className='category'>
+                      {
+                        item.categories.map((category) => {
+                          return <span className='category-item'>{category}</span>;
+                        })
+                      }
+                    </td>
+                    <td className='action-link'>
+                      <a className='delete' data-number={item.number} onClick={deleteCatalogItem} title='Delete'><i class='far fa-trash-alt'></i></a>
+                    </td>
+                    <td className='action-link'>
+                      <Link to={`/upsert-item/${item.number}`}><i class='far fa-edit'></i></Link>
+                    </td>
+                  </tr>
+                );
+              }) : (
+                <tr>
+                  <td colspan="8" className="no-results">No Results found</td>
                 </tr>
-              );
-            })
+              )
           }
         </tbody>
       </table>

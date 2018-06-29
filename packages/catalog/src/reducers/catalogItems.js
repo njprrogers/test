@@ -21,6 +21,12 @@ const catalog = (state = initialState, action) => {
         searchTerm: action.searchTerm
       };
     }
+    case "UPDATE_SEARCH_TYPE": {
+      return {
+        ...state,
+        searchType: action.searchType
+      };
+    }
     case "DELETE_COMPLETE": {
       return {
         ...state,
@@ -36,7 +42,7 @@ const catalog = (state = initialState, action) => {
 export default catalog;
 
 // Search selector colocated with catalog reducer
-export const searchItems = (state = initialState, searchTerm) => {
+export const searchItems = (state = initialState, searchTerm, searchType) => {
   // state is catalog exported from this reducer
   if (!searchTerm) return state.items;
   return state.items.filter(item => {

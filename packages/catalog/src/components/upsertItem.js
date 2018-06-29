@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { Form, Text, Select, NestedField } from "react-form";
 import "../css/forms.css";
-import itemsClient from "../client";
 import Loader from "./loader";
 import MultiFields from "./multiFields";
 
 const required = (field, name) => {
-  if (!field || field.trim() === "") {
+  if (!field) {
     return "Please enter a value";
   }
 };
@@ -20,70 +19,26 @@ class CatalogForm extends Component {
       formErrorMsg: ""
     };
   }
-  transformValues(submittedValues) {
-    let body = {};
-    let images = [];
-
-    submittedValues.images &&
-      submittedValues.images.forEach((image, index) => {
-        images.push({
-          url: image,
-          tags: [submittedValues["images-tag"][index] || ""]
-        });
-      });
-    body = {
-      number: submittedValues.number,
-      locale: submittedValues.locale,
-      currency: submittedValues.currency,
-      name: submittedValues.name,
-      price: submittedValues.price,
-      description: submittedValues.description,
-      categories: submittedValues.categories.category,
-      images: images
-    };
-    return body;
-  }
   submitForm(submittedValues) {
-    let opts = {};
-    this.setState({ submittedValues });
-    opts.body = this.transformValues(submittedValues);
-
-    itemsClient
-      .post("frontend-exercises", opts)
-      .then(response => {
-        if (!response.ok) {
-          this.setState({
-            formError: true,
-            formErrorMsg: response.result.messages[0]
-          });
-        } else {
-          this.setState({
-            formError: false,
-            formErrorMsg: "",
-            success: true
-          });
-        }
-        this.setState({ success: true });
-      })
-      .catch(e => {
-        this.setState({
-          formError: true,
-          formErrorMsg: e.messages
-        });
-      });
-    console.log("submit form", opts);
+    this.props.submitForm(submittedValues);
   }
-
   componentWillMount() {}
   componentDidMount() {
     console.log("MOUNTE£D");
     console.log(this);
   }
   render() {
-    const { currencies, loading, item, edit, number } = this.props;
+    const {
+      currencies,
+      loading,
+      item,
+      edit,
+      formError,
+      formErrorMsg,
+      success
+    } = this.props;
     let defaultValues = {};
     console.log(item);
-    const { formError, formErrorMsg } = this.state;
     if (item) {
       defaultValues = {
         number: item.number,
@@ -272,6 +227,9 @@ class CatalogForm extends Component {
                         + Add images
                       </button>
                     </fieldset>
+                    {success ? (
+                      <p className="success">Item added succesfully!</p>
+                    ) : null}
                     <p className="error-msg">{formErrorMsg}</p>
                     <button type="submit" className="btn submit">
                       Submit

@@ -108,6 +108,12 @@ tr:hover td {
   border-top: 1px solid #22262e;
 }
 
+tr:hover a,
+tr:hover a:focus,
+tr:hover a:visited {
+  color: #ffffff;
+}
+
 tr:first-child {
   border-top: none;
 }
@@ -158,14 +164,28 @@ td:last-child {
 .text-right {
   text-align: right;
 }
+.search-form {
+  display: flex;
+}
 .search-input {
   background: #fff url("../images/searchicon.png") no-repeat 99%;
   margin: 10px 0;
-  width: 100%;
+  width: 85%;
   padding: 10px;
   font-size: 16px;
   color: #3e94ec;
   font-family: "Roboto", helvetica, arial, sans-serif;
+  border-radius: 5px;
+}
+.search-select {
+  margin: 10px 0;
+  width: 15%;
+  padding: 10px;
+  font-size: 16px;
+  color: #3e94ec;
+  background: #fff;
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  margin-right: 1px;
 }
 .edit,
 .delete {
@@ -212,4 +232,24 @@ td:last-child {
   100% {
     transform: rotate(360deg);
   }
+}
+.action-link {
+  text-align: center;
+}
+.action-link a,
+.action-link a:focus,
+.action-link a:visited {
+  color: #666b85;
+}
+.action-link a:hover {
+  color: white;
+}
+.no-results {
+  background: #fff;
+  font-size: 16px;
+  padding: 20px;
+  text-align: center;
+}
+.images {
+  text-align: center;
 }

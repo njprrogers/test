@@ -1,5 +1,6 @@
 export default {
   isLoading: true,
   items: [],
-  searchTerm: ''
+  searchTerm: "",
+  searchType: "all"
 };

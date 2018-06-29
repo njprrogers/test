@@ -76,3 +76,9 @@ fieldset {
 .error-msg {
   color: red;
 }
+.success {
+  border: 1px solid green;
+  width: 100%;
+  padding: 5px;
+  color: green;
+}
