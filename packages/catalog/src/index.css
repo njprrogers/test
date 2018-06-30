@@ -44,3 +44,13 @@ h1 {
   border-bottom: 1px solid #ccc;
   margin: 0 0 20px 0;
 }
+.page-container {
+  background: #fff;
+  padding: 20px;
+}
+.code {
+  font-style: italic;
+  background: #f1f1f1;
+  display: inline-block;
+  padding: 5px;
+}
