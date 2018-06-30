@@ -2,6 +2,8 @@
 
 This app allows the user to browse, add to, update and search the items catalog from flow. The app is written in React and Redux using the Container pattern. I've chosen to use Redux for the browse and search page. I didn't feel the form page needed Redux so I just used React state directly.
 
+I've used Airbnb as a base for my linting.
+
 For the forms, I've used the react-forms (https://react-form.js.org/#/) library. It has a nice API and lots of nice free stuff around validation / errors / successes.
 
 I used create-react-app to create the app.
