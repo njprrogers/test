@@ -30,9 +30,16 @@ const catalog = (state = initialState, action) => {
     case "DELETE_COMPLETE": {
       return {
         ...state,
+        isLoading: false,
         items: state.items.filter(item => {
           return item.number !== action.number;
         })
+      };
+    }
+    case "LOADING": {
+      return {
+        ...state,
+        isLoading: true
       };
     }
     default:

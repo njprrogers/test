@@ -5,31 +5,18 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { getCatalog, deleteCatalogItem, editCatalogItem } from "../actions";
 import CatalogTable from "../components/catalogTable";
-import { getVisibleItems } from "../reducers";
 import itemPropType from "../components/propTypes/item";
 
-// const mapStateToProps = state => ({
-//   count: state.counter.count,
-//   isIncrementing: state.counter.isIncrementing,
-//   isDecrementing: state.counter.isDecrementing,
-//   catalogItems: state.catalogItems,
-//   isLoading: state.isLoading
-// });
 const mapStateToProps = function mapStateToProps(state, ownProps) {
   console.log(state);
   return {
     items: state.catalog.items,
-    // items: getVisibleItems(state.catalog, state.catalog.searchTerm, state.catalog.searchType),
     isLoading: state.catalog.isLoading
   };
 };
 
 class CatalogTableContainer extends Component {
-  // constructor(props){
-  //  super(props)
-  // }
   componentDidMount() {
-    /* do something */
     this.props.getCatalog();
   }
   render() {

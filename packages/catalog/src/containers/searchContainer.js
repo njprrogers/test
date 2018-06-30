@@ -26,7 +26,6 @@ class SearchContainer extends Component {
   }
 
   handleChange(searchTerm) {
-    // this.props.updateSearchTerm(searchTerm);
     if (searchTerm === "") {
       this.props.updateSearchTerm(searchTerm);
       this.props.getCatalog();

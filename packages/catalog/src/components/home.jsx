@@ -5,7 +5,6 @@ import itemPropType from './propTypes/item';
 
 const Home = (props) => {
   const { items } = props;
-  const loadingMsg = props.isLoading ? 'is loading' : 'not loading';
   return (
     <div className="container">
       <table>
@@ -18,7 +17,6 @@ const Home = (props) => {
             <th>Image</th>
             <th>Categories</th>
           </tr>
-
           {
             items.map((item) => {
               return (

@@ -33,7 +33,6 @@ class Search extends Component {
           length="20"
           placeholder="Search"
           value={this.props.searchTerm}
-          // defaultValue={this.props.searchTerm}
           onChange={this.handleChange}
         />
       </div>

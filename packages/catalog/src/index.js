@@ -12,7 +12,7 @@ import "@fortawesome/fontawesome-free-webfonts/css/fa-brands.css";
 import "@fortawesome/fontawesome-free-webfonts/css/fa-regular.css";
 import "@fortawesome/fontawesome-free-webfonts/css/fontawesome.css";
 
-store.dispatch(getCatalog());
+// store.dispatch(getCatalog());
 const target = document.querySelector("#root");
 
 render(

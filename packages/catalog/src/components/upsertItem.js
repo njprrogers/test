@@ -22,11 +22,6 @@ class CatalogForm extends Component {
   submitForm(submittedValues) {
     this.props.submitForm(submittedValues);
   }
-  componentWillMount() {}
-  componentDidMount() {
-    console.log("MOUNTE£D");
-    console.log(this);
-  }
   render() {
     const {
       currencies,
@@ -37,7 +32,6 @@ class CatalogForm extends Component {
       success
     } = this.props;
     let defaultValues = {};
-    console.log(item);
     if (item) {
       defaultValues = {
         number: item.number,

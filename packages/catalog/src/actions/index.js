@@ -35,10 +35,10 @@ function receiveCatalog(items) {
     receivedAt: Date.now()
   };
 }
-export const DELETE_ITEM = "DELETE_ITEM";
-function deleteItem() {
+export const LOADING = "LOADING";
+function loading() {
   return {
-    type: DELETE_ITEM
+    type: LOADING
   };
 }
 export const DELETE_COMPLETE = "DELETE_COMPLETE";
@@ -55,23 +55,13 @@ export function editCatalogItem(number) {
     number: number
   };
 }
+/**
+ * Get the catalog items from the flow api
+ */
 export function getCatalog() {
-  // Thunk middleware knows how to handle functions.
-  // It passes the dispatch method as an argument to the function,
-  // thus making it able to dispatch actions itself.
-
   return function dispatchIt(dispatch) {
-    // First dispatch: the app state is updated to inform
-    // that the API call is starting.
-
-    // dispatch(requestPosts(subreddit));
-
-    // The function called by the thunk middleware can return a value,
-    // that is passed on as the return value of the dispatch method.
-
     // In this case, we return a promise to wait for.
     // This is not required by thunk middleware, but it is convenient for us.
-
     dispatch(fetchCatalog());
     return itemsClient
       .get("frontend-exercises")
@@ -91,23 +81,14 @@ export function getCatalog() {
       );
   };
 }
+/**
+ * Delete a catalog item from the flow api
+ * @param {Event} e - Click event
+ */
 export function deleteCatalogItem(e) {
   const number = e.target.dataset.number;
-  // Thunk middleware knows how to handle functions.
-  // It passes the dispatch method as an argument to the function,
-  // thus making it able to dispatch actions itself.
-
   return function dispatchIt(dispatch) {
-    // First dispatch: the app state is updated to inform
-    // that the API call is starting.
-
-    // dispatch(requestPosts(subreddit));
-
-    // The function called by the thunk middleware can return a value,
-    // that is passed on as the return value of the dispatch method.
-
-    // In this case, we return a promise to wait for.
-    // This is not required by thunk middleware, but it is convenient for us.
+    dispatch(loading());
     // deleteByNumber(organization, number, options = {})
     return itemsClient
       .deleteByNumber("frontend-exercises", number)
@@ -127,6 +108,10 @@ export function deleteCatalogItem(e) {
       );
   };
 }
+/**
+ * Delete a catalog item from the flow api
+ * @param {String} searchTerm - Search term entered by user
+ */
 export function searchCatalogItems(searchTerm) {
   return function dispatchIt(dispatch, getState) {
     dispatch(updateSearchTerm(searchTerm));

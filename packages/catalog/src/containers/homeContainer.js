@@ -9,7 +9,6 @@ import SearchContainer from "./searchContainer";
 import itemPropType from "../components/propTypes/item";
 
 const mapStateToProps = function mapStateToProps(state, ownProps) {
-  console.log(state);
   return {
     items: state.catalog.items,
     isLoading: state.catalog.isLoading
@@ -18,7 +17,6 @@ const mapStateToProps = function mapStateToProps(state, ownProps) {
 
 class HomeContainer extends Component {
   componentDidMount() {
-    /* do something */
     this.props.getCatalog();
   }
   render() {

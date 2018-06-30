@@ -57,7 +57,6 @@ class UpsertItemContainer extends Component {
   }
   submitForm(submittedValues) {
     let opts = {};
-    // this.setState({ submittedValues });
     opts.body = this.transformValues(submittedValues);
     if (this.state.edit) {
       this.updateItem(opts);
@@ -87,7 +86,6 @@ class UpsertItemContainer extends Component {
           success: false
         });
       });
-    console.log("update submit form", opts);
   }
   addItem(opts) {
     itemsClient
@@ -111,7 +109,6 @@ class UpsertItemContainer extends Component {
           success: false
         });
       });
-    console.log("submit form", opts);
   }
   componentDidMount() {
     // Load currencies
