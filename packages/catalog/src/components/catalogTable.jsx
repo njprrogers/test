@@ -23,7 +23,7 @@ const CatalogTable = (props) => {
                 <th>Price</th>
                 <th>Image</th>
                 <th>Categories</th>
-                <th colspan='2'>Actions</th>
+                <th colSpan='2'>Actions</th>
               </tr>
               {
                 items.length ?
@@ -42,7 +42,7 @@ const CatalogTable = (props) => {
                               return image.tags.includes('thumbnail');
                             }).map((thumbNail) => {
                               return (
-                                <img src={thumbNail.url} width='25' height='25' alt='thumbnail' />
+                                <img key={thumbNail.url} src={thumbNail.url} width='25' height='25' alt='thumbnail' />
                               );
                             })
                           }
@@ -50,7 +50,7 @@ const CatalogTable = (props) => {
                         <td className='category'>
                           {
                             item.categories.map((category) => {
-                              return <span className='category-item'>{category}</span>;
+                              return <span  key={category} className='category-item'>{category}</span>;
                             })
                           }
                         </td>
@@ -58,13 +58,13 @@ const CatalogTable = (props) => {
                           <a className='delete' data-number={item.number} onClick={deleteCatalogItem} title='Delete'><i  data-number={item.number} className='far fa-trash-alt'></i></a>
                         </td>
                         <td className='action-link'>
-                          <Link to={`/upsert-item/${item.number}`}><i class='far fa-edit'></i></Link>
+                          <Link to={`/upsert-item/${item.number}`}><i className='far fa-edit'></i></Link>
                         </td>
                       </tr>
                     );
                   }) : (
                     <tr>
-                      <td colspan="8" className="no-results">No Results found</td>
+                      <td colSpan="8" className="no-results">No Results found</td>
                     </tr>
                   )
               }
@@ -77,11 +77,13 @@ const CatalogTable = (props) => {
 
 CatalogTable.propTypes = {
   items: PropTypes.arrayOf(itemPropType()),
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  deleteCatalogItem: PropTypes.func
 };
 CatalogTable.defaultProps = {
   items: [],
-  isLoading: true
+  isLoading: true,
+  deleteCatalogItem: PropTypes.func
 };
 
 export default CatalogTable;

@@ -7,16 +7,13 @@ const About = () => (
     <ul>
       <li>You can browse / add / edit / delete items</li>
       <li>I've used Airbnb as a base for my linting.</li>
-
       <li>
         For the forms, I've used the react-forms (<a href="https://react-form.js.org/#/">
           https://react-form.js.org/#/
         </a>) library. It has a nice API and lots of nice free stuff around
         validation / errors / successes.
       </li>
-
       <li>I used create-react-app to create the app.</li>
-
       <li>
         To get up and running:
         <ul>

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import itemPropType from "../components/propTypes/item";
 import { Form, Text, Select, NestedField } from "react-form";
 import "../css/forms.css";
 import Loader from "./loader";
@@ -238,6 +240,28 @@ class CatalogForm extends Component {
   }
 }
 
+CatalogForm.propTypes = {
+  item: itemPropType(),
+  loading: PropTypes.bool,
+  currencies: PropTypes.array,
+  edit: PropTypes.bool,
+  number: PropTypes.string,
+  submitForm: PropTypes.func,
+  formError: PropTypes.bool,
+  formErrorMsg: PropTypes.string,
+  success: PropTypes.bool
+};
+CatalogForm.defaultProps = {
+  item: {},
+  loading: true,
+  currencies: [],
+  edit: false,
+  number: "",
+  submitForm: () => void 0,
+  formError: false,
+  formErrorMsg: "",
+  success: false
+};
 export default CatalogForm;
 /*
 

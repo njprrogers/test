@@ -8,7 +8,6 @@ import CatalogTable from "../components/catalogTable";
 import itemPropType from "../components/propTypes/item";
 
 const mapStateToProps = function mapStateToProps(state, ownProps) {
-  console.log(state);
   return {
     items: state.catalog.items,
     isLoading: state.catalog.isLoading
@@ -46,7 +45,6 @@ const mapDispatchToProps = dispatch =>
       editCatalogItem,
       changePage: () => push("/about-us"),
       editPage: e => {
-        console.log(e);
         push("/upsert-item");
       }
     },

@@ -2,6 +2,8 @@ import React from 'react';
 import {
   Text
 } from "react-form";
+import PropTypes from 'prop-types';
+
 
 const MultiFields = (props) => {
   const { name, formApi } = props;
@@ -37,5 +39,12 @@ const MultiFields = (props) => {
     </fieldset>
   )
 }
-
+MultiFields.propTypes = {
+  formApi: PropTypes.object,
+  isLoading: PropTypes.bool
+};
+MultiFields.defaultProps = {
+  formApi: {},
+  isLoading: false
+};
 export default MultiFields;

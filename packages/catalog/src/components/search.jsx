@@ -41,10 +41,14 @@ class Search extends Component {
 }
 Search.propTypes = {
   searchTerm: PropTypes.string,
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  handleChange: PropTypes.func,
+  handleSelectChange: PropTypes.func
 };
 Search.defaultProps = {
   searchTerm: '',
-  isLoading: true
+  isLoading: true,
+  handleChange: () => void(0),
+  handleSelectChange: () => void(0)
 };
 export default Search;
