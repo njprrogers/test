@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import itemPropType from "../components/propTypes/item";
 import { Form, Text, Select, NestedField } from "react-form";
@@ -12,7 +12,7 @@ const required = (field, name) => {
   }
 };
 
-class CatalogForm extends Component {
+class CatalogForm extends PureComponent {
   constructor(props) {
     super(props);
     this.submitForm = this.submitForm.bind(this);
@@ -27,6 +27,8 @@ class CatalogForm extends Component {
   render() {
     const {
       currencies,
+      languages,
+      countries,
       loading,
       item,
       edit,
@@ -39,6 +41,8 @@ class CatalogForm extends Component {
         number: item.number,
         name: item.name,
         locale: item.locale,
+        language: item.locale.substring(0, 2),
+        country: item.locale.substring(3, 5),
         description: item.description,
         currency: item.price.currency,
         price: item.price.amount,
@@ -83,26 +87,6 @@ class CatalogForm extends Component {
                       </div>
                       <div className="row">
                         <div className="field">
-                          <label htmlFor="locale">Locale</label>
-                          <Text
-                            validate={required}
-                            field="locale"
-                            title="Locale"
-                            className={
-                              formApi.errors && formApi.errors.locale
-                                ? "error"
-                                : null
-                            }
-                          />
-                          {formApi.errors ? (
-                            <p className="form-error">
-                              {formApi.errors.locale}
-                            </p>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="field">
                           <label htmlFor="name">Name</label>
                           <Text
                             validate={required}
@@ -116,27 +100,6 @@ class CatalogForm extends Component {
                           />
                           {formApi.errors ? (
                             <p className="form-error">{formApi.errors.name}</p>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="field">
-                          <label htmlFor="currency">Currency</label>
-                          <Select
-                            validate={required}
-                            field="currency"
-                            title="Currency"
-                            options={currencies}
-                            className={
-                              formApi.errors && formApi.errors.currency
-                                ? "error"
-                                : null
-                            }
-                          />
-                          {formApi.errors ? (
-                            <p className="form-error">
-                              {formApi.errors.currency}
-                            </p>
                           ) : null}
                         </div>
                       </div>
@@ -163,6 +126,70 @@ class CatalogForm extends Component {
                         <div className="field">
                           <label htmlFor="description">Description</label>
                           <Text field="description" title="Description" />
+                        </div>
+                      </div>
+                      <h1>Locale</h1>
+                      <div className="row">
+                        <div className="field">
+                          <label htmlFor="language">Language</label>
+                          <Select
+                            validate={required}
+                            field="language"
+                            title="Language"
+                            options={languages}
+                            className={
+                              formApi.errors && formApi.errors.language
+                                ? "error"
+                                : null
+                            }
+                          />
+                          {formApi.errors ? (
+                            <p className="form-error">
+                              {formApi.errors.language}
+                            </p>
+                          ) : null}
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="field">
+                          <label htmlFor="country">Country</label>
+                          <Select
+                            validate={required}
+                            field="country"
+                            title="Country"
+                            options={countries}
+                            className={
+                              formApi.errors && formApi.errors.country
+                                ? "error"
+                                : null
+                            }
+                          />
+                          {formApi.errors ? (
+                            <p className="form-error">
+                              {formApi.errors.country}
+                            </p>
+                          ) : null}
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="field">
+                          <label htmlFor="currency">Currency</label>
+                          <Select
+                            validate={required}
+                            field="currency"
+                            title="Currency"
+                            options={currencies}
+                            className={
+                              formApi.errors && formApi.errors.currency
+                                ? "error"
+                                : null
+                            }
+                          />
+                          {formApi.errors ? (
+                            <p className="form-error">
+                              {formApi.errors.currency}
+                            </p>
+                          ) : null}
                         </div>
                       </div>
                     </fieldset>
@@ -244,6 +271,8 @@ CatalogForm.propTypes = {
   item: itemPropType(),
   loading: PropTypes.bool,
   currencies: PropTypes.array,
+  languages: PropTypes.array,
+  countries: PropTypes.array,
   edit: PropTypes.bool,
   number: PropTypes.string,
   submitForm: PropTypes.func,
@@ -255,6 +284,8 @@ CatalogForm.defaultProps = {
   item: {},
   loading: true,
   currencies: [],
+  languages: [],
+  countries: [],
   edit: false,
   number: "",
   submitForm: () => void 0,

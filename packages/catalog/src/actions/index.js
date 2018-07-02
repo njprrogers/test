@@ -85,8 +85,7 @@ export function getCatalog() {
  * Delete a catalog item from the flow api
  * @param {Event} e - Click event
  */
-export function deleteCatalogItem(e) {
-  const number = e.target.dataset.number;
+export function deleteCatalogItem(number) {
   return function dispatchIt(dispatch) {
     dispatch(loading());
     // deleteByNumber(organization, number, options = {})

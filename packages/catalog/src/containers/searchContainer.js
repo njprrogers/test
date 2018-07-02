@@ -23,9 +23,11 @@ class SearchContainer extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
   }
 
-  handleChange(searchTerm) {
+  handleChange(event) {
+    const searchTerm = event.target.value;
     if (searchTerm === "") {
       this.props.updateSearchTerm(searchTerm);
       this.props.getCatalog();
@@ -34,7 +36,8 @@ class SearchContainer extends Component {
     }
   }
 
-  handleSelectChange(searchType) {
+  handleSelectChange(event) {
+    const searchType = event.target.value;
     this.props.updateSearchType(searchType);
   }
 

@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import { ConnectedRouter } from "react-router-redux";
 import store, { history } from "./store";
 import App from "./containers/app";
-import { getCatalog } from "./actions/index";
 import "./index.css";
 import "@fortawesome/fontawesome-free-webfonts/css/fa-solid.css";
 import "@fortawesome/fontawesome-free-webfonts/css/fa-brands.css";

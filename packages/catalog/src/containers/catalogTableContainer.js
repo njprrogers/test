@@ -15,22 +15,24 @@ const mapStateToProps = function mapStateToProps(state, ownProps) {
 };
 
 class CatalogTableContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.deleteCatalogItem = this.deleteCatalogItem.bind(this);
+  }
   componentDidMount() {
     this.props.getCatalog();
   }
+  deleteCatalogItem(e) {
+    const number = e.target.dataset.number;
+    this.props.deleteCatalogItem(number);
+  }
   render() {
-    const {
-      isLoading,
-      items,
-      deleteCatalogItem,
-      editCatalogItem,
-      editPage
-    } = this.props;
+    const { isLoading, items, editCatalogItem, editPage } = this.props;
     return (
       <CatalogTable
         items={items}
         isLoading={isLoading}
-        deleteCatalogItem={deleteCatalogItem}
+        deleteCatalogItem={this.deleteCatalogItem}
         editCatalogItem={editCatalogItem}
         editPage={editPage}
       />

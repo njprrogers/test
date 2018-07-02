@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import UpsertItem from "../components/upsertItem";
-import currenciesClient from "../client/currencies";
-import { itemsClient } from "../client";
+import {
+  itemsClient,
+  currenciesClient,
+  languagesClient,
+  countriesClient
+} from "../client";
 
 class UpsertItemContainer extends Component {
   constructor(props) {
@@ -12,6 +15,8 @@ class UpsertItemContainer extends Component {
       loading: true,
       number: null,
       currencies: [],
+      languages: [],
+      countries: [],
       edit: false,
       formError: false,
       formErrorMsg: "",
@@ -32,6 +37,30 @@ class UpsertItemContainer extends Component {
       return currencies;
     });
   }
+  getLanguages() {
+    return languagesClient.get().then(data => {
+      let languages = [];
+      data.result.forEach(element => {
+        languages.push({
+          label: element.name,
+          value: element.iso_639_2
+        });
+      });
+      return languages;
+    });
+  }
+  getCountries() {
+    return countriesClient.get().then(data => {
+      let countries = [];
+      data.result.forEach(element => {
+        countries.push({
+          label: element.name,
+          value: element.iso_3166_2
+        });
+      });
+      return countries;
+    });
+  }
   transformValues(submittedValues) {
     let body = {};
     let images = [];
@@ -43,9 +72,10 @@ class UpsertItemContainer extends Component {
           tags: [submittedValues["images-tag"][index] || ""]
         });
       });
+    const locale = submittedValues.language + "_" + submittedValues.country;
     body = {
       number: submittedValues.number,
-      locale: submittedValues.locale,
+      locale: locale,
       currency: submittedValues.currency,
       name: submittedValues.name,
       price: submittedValues.price,
@@ -116,6 +146,12 @@ class UpsertItemContainer extends Component {
     this.getCurrencies().then(currencies => {
       this.setState({ currencies: currencies }); // would cache this in localstorage in 'real life'
     });
+    this.getLanguages().then(languages => {
+      this.setState({ languages: languages }); // would cache this in localstorage in 'real life'
+    });
+    this.getCountries().then(countries => {
+      this.setState({ countries: countries }); // would cache this in localstorage in 'real life'
+    });
     const number = this.props.match.params.number;
     if (!number) {
       this.setState({ loading: false, edit: false });
@@ -133,6 +169,8 @@ class UpsertItemContainer extends Component {
       item,
       loading,
       currencies,
+      languages,
+      countries,
       edit,
       number,
       formError,
@@ -144,6 +182,8 @@ class UpsertItemContainer extends Component {
         item={item}
         loading={loading}
         currencies={currencies}
+        languages={languages}
+        countries={countries}
         edit={edit}
         number={number}
         submitForm={this.submitForm}
@@ -154,14 +194,5 @@ class UpsertItemContainer extends Component {
     );
   }
 }
-
-// UpsertItemContainer.propTypes = {
-//   items: PropTypes.arrayOf(itemPropType()),
-//   isLoading: PropTypes.bool
-// };
-// UpsertItemContainer.defaultProps = {
-//   items: [],
-//   isLoading: true
-// };
 
 export default UpsertItemContainer;
