@@ -1,14 +1,14 @@
-import Client from './client';
+import Client from "./client";
 
 export default class Users extends Client {
   constructor(opts) {
     let options = opts;
 
-    if (typeof opts === 'string') {
+    if (typeof opts === "string") {
       options = { host: opts }; // convert host string to options object
     }
 
-    options.serviceName = 'API';
+    options.serviceName = "API";
 
     super(options);
   }
@@ -20,14 +20,14 @@ export default class Users extends Client {
   post(options = {}) {
     return this.makeRequest(`${this.host}/users`, {
       ...options,
-       method: 'POST',
+      method: "POST"
     });
   }
 
   postAuthenticate(options = {}) {
     return this.makeRequest(`${this.host}/users/authenticate`, {
       ...options,
-       method: 'POST',
+      method: "POST"
     });
   }
 
@@ -42,22 +42,21 @@ export default class Users extends Client {
   putById(id, options = {}) {
     return this.makeRequest(`${this.host}/users/${id}`, {
       ...options,
-       method: 'PUT',
+      method: "PUT"
     });
   }
 
   patchPasswordsById(id, options = {}) {
     return this.makeRequest(`${this.host}/users/${id}/passwords`, {
       ...options,
-       method: 'PATCH',
+      method: "PATCH"
     });
   }
 
   deletePasswordsById(id, options = {}) {
     return this.makeRequest(`${this.host}/users/${id}/passwords`, {
       ...options,
-       method: 'DELETE',
+      method: "DELETE"
     });
   }
-
 }

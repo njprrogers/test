@@ -1,14 +1,14 @@
-import Client from './client';
+import Client from "./client";
 
 export default class Imports extends Client {
   constructor(opts) {
     let options = opts;
 
-    if (typeof opts === 'string') {
+    if (typeof opts === "string") {
       options = { host: opts }; // convert host string to options object
     }
 
-    options.serviceName = 'API';
+    options.serviceName = "API";
 
     super(options);
   }
@@ -20,23 +20,28 @@ export default class Imports extends Client {
   post(organization, options = {}) {
     return this.makeRequest(`${this.host}/${organization}/imports`, {
       ...options,
-       method: 'POST',
+      method: "POST"
     });
   }
 
   getVersions(organization, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/imports/versions`, options);
+    return this.makeRequest(
+      `${this.host}/${organization}/imports/versions`,
+      options
+    );
   }
 
   getById(organization, id, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/imports/${id}`, options);
+    return this.makeRequest(
+      `${this.host}/${organization}/imports/${id}`,
+      options
+    );
   }
 
   deleteById(organization, id, options = {}) {
     return this.makeRequest(`${this.host}/${organization}/imports/${id}`, {
       ...options,
-       method: 'DELETE',
+      method: "DELETE"
     });
   }
-
 }

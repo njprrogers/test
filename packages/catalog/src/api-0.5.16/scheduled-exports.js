@@ -1,14 +1,14 @@
-import Client from './client';
+import Client from "./client";
 
 export default class ScheduledExports extends Client {
   constructor(opts) {
     let options = opts;
 
-    if (typeof opts === 'string') {
+    if (typeof opts === "string") {
       options = { host: opts }; // convert host string to options object
     }
 
-    options.serviceName = 'API';
+    options.serviceName = "API";
 
     super(options);
   }
@@ -20,26 +20,28 @@ export default class ScheduledExports extends Client {
   post(options = {}) {
     return this.makeRequest(`${this.host}/users/scheduled/exports`, {
       ...options,
-       method: 'POST',
+      method: "POST"
     });
   }
 
   getById(id, options = {}) {
-    return this.makeRequest(`${this.host}/users/scheduled/exports/${id}`, options);
+    return this.makeRequest(
+      `${this.host}/users/scheduled/exports/${id}`,
+      options
+    );
   }
 
   putById(id, options = {}) {
     return this.makeRequest(`${this.host}/users/scheduled/exports/${id}`, {
       ...options,
-       method: 'PUT',
+      method: "PUT"
     });
   }
 
   deleteById(id, options = {}) {
     return this.makeRequest(`${this.host}/users/scheduled/exports/${id}`, {
       ...options,
-       method: 'DELETE',
+      method: "DELETE"
     });
   }
-
 }

@@ -22,7 +22,7 @@ export function updateSearchType(searchType) {
   };
 }
 export const FETCH_CATALOG = "FETCH_CATALOG";
-function fetchCatalog(items) {
+function fetchCatalog() {
   return {
     type: FETCH_CATALOG
   };
@@ -45,14 +45,14 @@ export const DELETE_COMPLETE = "DELETE_COMPLETE";
 function deleteComplete(number) {
   return {
     type: DELETE_COMPLETE,
-    number: number
+    number
   };
 }
 export const EDIT_ITEM = "EDIT_ITEM";
 export function editCatalogItem(number) {
   return {
     type: EDIT_ITEM,
-    number: number
+    number
   };
 }
 /**
@@ -73,12 +73,7 @@ export function getCatalog() {
         // https://github.com/facebook/react/issues/6895
         error => console.log("An error occurred.", error)
       )
-      .then(json =>
-        // We can dispatch many times!
-        // Here, we update the app state with the results of the API call.
-
-        dispatch(receiveCatalog(json))
-      );
+      .then(json => dispatch(receiveCatalog(json)));
   };
 }
 /**
@@ -99,13 +94,25 @@ export function deleteCatalogItem(number) {
         // https://github.com/facebook/react/issues/6895
         error => console.log("An error occurred.", error)
       )
-      .then(response =>
-        // We can dispatch many times!
-        // Here, we update the app state with the results of the API call.
-
-        dispatch(deleteComplete(number))
-      );
+      .then(() => dispatch(deleteComplete(number)));
   };
+}
+function getSearchQuery(searchType, searchTerm) {
+  if (searchType === "all") {
+    return searchTerm;
+  }
+  /* eslint-disable */
+  if (!isNaN(searchTerm)) {
+    return `number:${searchTerm}`;
+  }
+  /* eslint-disable */
+  if (searchType === "category") {
+    return `category:${searchTerm}`;
+  }
+  if (searchType === "brand") {
+    return `brand:${searchTerm}`;
+  }
+  return searchTerm;
 }
 /**
  * Delete a catalog item from the flow api
@@ -131,19 +138,4 @@ export function searchCatalogItems(searchTerm) {
         dispatch(receiveCatalog(response));
       });
   };
-}
-function getSearchQuery(searchType, searchTerm) {
-  if (searchType === "all") {
-    return searchTerm;
-  }
-  if (!isNaN(searchTerm)) {
-    return `number:${searchTerm}`;
-  }
-  if (searchType === "category") {
-    return `category:${searchTerm}`;
-  }
-  if (searchType === "brand") {
-    return `brand:${searchTerm}`;
-  }
-  return searchTerm;
 }

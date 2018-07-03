@@ -11,9 +11,8 @@ import "@fortawesome/fontawesome-free-webfonts/css/fa-brands.css";
 import "@fortawesome/fontawesome-free-webfonts/css/fa-regular.css";
 import "@fortawesome/fontawesome-free-webfonts/css/fontawesome.css";
 
-// store.dispatch(getCatalog());
 const target = document.querySelector("#root");
-
+/* eslint-disable react/jsx-filename-extension */
 render(
   <Provider store={store}>
     <ConnectedRouter history={history}>

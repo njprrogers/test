@@ -1,11 +1,11 @@
-import React from "react";
-import { Route, Link } from "react-router-dom";
-import Home from "../containers/homeContainer";
-import About from "../components/about";
-import UpsertItemContainer from "../containers/upsertItemContainer";
-import "../css/home.css";
-import imgPath1 from "../images/logo-branco-part1.png";
-import imgPath2 from "../images/logo-branco-part2.png";
+import React from 'react';
+import { Route, Link } from 'react-router-dom';
+import Home from '../containers/homeContainer';
+import About from './about';
+import UpsertItemContainer from '../containers/upsertItemContainer';
+import '../css/home.css';
+import imgPath1 from '../images/logo-branco-part1.png';
+import imgPath2 from '../images/logo-branco-part2.png';
 
 const Header = () => (
   <div>

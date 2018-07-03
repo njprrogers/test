@@ -1,14 +1,14 @@
-import Client from './client';
+import Client from "./client";
 
 export default class Organizations extends Client {
   constructor(opts) {
     let options = opts;
 
-    if (typeof opts === 'string') {
+    if (typeof opts === "string") {
       options = { host: opts }; // convert host string to options object
     }
 
-    options.serviceName = 'API';
+    options.serviceName = "API";
 
     super(options);
   }
@@ -18,7 +18,10 @@ export default class Organizations extends Client {
   }
 
   getCountriesAndDestinationsByOrganization(organization, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/countries/destinations`, options);
+    return this.makeRequest(
+      `${this.host}/${organization}/countries/destinations`,
+      options
+    );
   }
 
   get(options = {}) {
@@ -28,7 +31,7 @@ export default class Organizations extends Client {
   post(options = {}) {
     return this.makeRequest(`${this.host}/organizations`, {
       ...options,
-       method: 'POST',
+      method: "POST"
     });
   }
 
@@ -37,47 +40,77 @@ export default class Organizations extends Client {
   }
 
   getByOrganizationId(organizationId, options = {}) {
-    return this.makeRequest(`${this.host}/organizations/${organizationId}`, options);
+    return this.makeRequest(
+      `${this.host}/organizations/${organizationId}`,
+      options
+    );
   }
 
   putByOrganizationId(organizationId, options = {}) {
     return this.makeRequest(`${this.host}/organizations/${organizationId}`, {
       ...options,
-       method: 'PUT',
+      method: "PUT"
     });
   }
 
   deleteByOrganizationId(organizationId, options = {}) {
     return this.makeRequest(`${this.host}/organizations/${organizationId}`, {
       ...options,
-       method: 'DELETE',
+      method: "DELETE"
     });
   }
 
   getSettingsAndCurrenciesByOrganizationId(organizationId, options = {}) {
-    return this.makeRequest(`${this.host}/organizations/${organizationId}/settings/currencies`, options);
+    return this.makeRequest(
+      `${this.host}/organizations/${organizationId}/settings/currencies`,
+      options
+    );
   }
 
   getSettingsAndRegionsByOrganizationId(organizationId, options = {}) {
-    return this.makeRequest(`${this.host}/organizations/${organizationId}/settings/regions`, options);
+    return this.makeRequest(
+      `${this.host}/organizations/${organizationId}/settings/regions`,
+      options
+    );
   }
 
-  getSettingsAndRegionsAndCountriesAndAvailableByOrganizationId(organizationId, options = {}) {
-    return this.makeRequest(`${this.host}/organizations/${organizationId}/settings/regions/countries/available`, options);
+  getSettingsAndRegionsAndCountriesAndAvailableByOrganizationId(
+    organizationId,
+    options = {}
+  ) {
+    return this.makeRequest(
+      `${
+        this.host
+      }/organizations/${organizationId}/settings/regions/countries/available`,
+      options
+    );
   }
 
-  putSettingsAndRegionsByOrganizationIdAndRegion(organizationId, region, options = {}) {
-    return this.makeRequest(`${this.host}/organizations/${organizationId}/settings/regions/${region}`, {
-      ...options,
-       method: 'PUT',
-    });
+  putSettingsAndRegionsByOrganizationIdAndRegion(
+    organizationId,
+    region,
+    options = {}
+  ) {
+    return this.makeRequest(
+      `${this.host}/organizations/${organizationId}/settings/regions/${region}`,
+      {
+        ...options,
+        method: "PUT"
+      }
+    );
   }
 
-  deleteSettingsAndRegionsByOrganizationIdAndRegion(organizationId, region, options = {}) {
-    return this.makeRequest(`${this.host}/organizations/${organizationId}/settings/regions/${region}`, {
-      ...options,
-       method: 'DELETE',
-    });
+  deleteSettingsAndRegionsByOrganizationIdAndRegion(
+    organizationId,
+    region,
+    options = {}
+  ) {
+    return this.makeRequest(
+      `${this.host}/organizations/${organizationId}/settings/regions/${region}`,
+      {
+        ...options,
+        method: "DELETE"
+      }
+    );
   }
-
 }

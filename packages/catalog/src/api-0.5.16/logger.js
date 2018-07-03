@@ -1,18 +1,15 @@
 /* eslint-disable no-console */
 export default class {
   constructor(dirRoot) {
-    this.path = dirRoot
-      .replace(process.cwd(), '')
-      .replace(/\//g, '.');
+    this.path = dirRoot.replace(process.cwd(), "").replace(/\//g, ".");
 
-    if (this.path.startsWith('.')) {
+    if (this.path.startsWith(".")) {
       this.path = this.path.slice(1);
     }
 
-    this.debugEnabled =
-      process.env.NODE_DEBUG ?
-      process.env.NODE_DEBUG.indexOf('node-sdk') !== -1 :
-      false;
+    this.debugEnabled = process.env.NODE_DEBUG
+      ? process.env.NODE_DEBUG.indexOf("node-sdk") !== -1
+      : false;
   }
 
   format(message) {

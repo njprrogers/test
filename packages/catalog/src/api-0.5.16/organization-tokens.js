@@ -1,14 +1,14 @@
-import Client from './client';
+import Client from "./client";
 
 export default class OrganizationTokens extends Client {
   constructor(opts) {
     let options = opts;
 
-    if (typeof opts === 'string') {
+    if (typeof opts === "string") {
       options = { host: opts }; // convert host string to options object
     }
 
-    options.serviceName = 'API';
+    options.serviceName = "API";
 
     super(options);
   }
@@ -20,8 +20,7 @@ export default class OrganizationTokens extends Client {
   post(organization, options = {}) {
     return this.makeRequest(`${this.host}/${organization}/tokens`, {
       ...options,
-       method: 'POST',
+      method: "POST"
     });
   }
-
 }

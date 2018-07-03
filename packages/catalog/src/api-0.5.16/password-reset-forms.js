@@ -1,14 +1,14 @@
-import Client from './client';
+import Client from "./client";
 
 export default class PasswordResetForms extends Client {
   constructor(opts) {
     let options = opts;
 
-    if (typeof opts === 'string') {
+    if (typeof opts === "string") {
       options = { host: opts }; // convert host string to options object
     }
 
-    options.serviceName = 'API';
+    options.serviceName = "API";
 
     super(options);
   }
@@ -16,15 +16,14 @@ export default class PasswordResetForms extends Client {
   post(options = {}) {
     return this.makeRequest(`${this.host}/users/passwords`, {
       ...options,
-       method: 'POST',
+      method: "POST"
     });
   }
 
   postResets(options = {}) {
     return this.makeRequest(`${this.host}/users/passwords/resets`, {
       ...options,
-       method: 'POST',
+      method: "POST"
     });
   }
-
 }

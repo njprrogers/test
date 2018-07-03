@@ -1,14 +1,14 @@
-import Client from './client';
+import Client from "./client";
 
 export default class Manifests extends Client {
   constructor(opts) {
     let options = opts;
 
-    if (typeof opts === 'string') {
+    if (typeof opts === "string") {
       options = { host: opts }; // convert host string to options object
     }
 
-    options.serviceName = 'API';
+    options.serviceName = "API";
 
     super(options);
   }
@@ -20,16 +20,21 @@ export default class Manifests extends Client {
   post(organization, options = {}) {
     return this.makeRequest(`${this.host}/${organization}/manifests`, {
       ...options,
-       method: 'POST',
+      method: "POST"
     });
   }
 
   getServicesAndOutstandingByService(organization, service, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/manifests/services/${service}/outstanding`, options);
+    return this.makeRequest(
+      `${this.host}/${organization}/manifests/services/${service}/outstanding`,
+      options
+    );
   }
 
   getById(organization, id, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/manifests/${id}`, options);
+    return this.makeRequest(
+      `${this.host}/${organization}/manifests/${id}`,
+      options
+    );
   }
-
 }

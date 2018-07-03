@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import { routerReducer } from "react-router-redux";
-import catalog, * as fromSearch from "./catalogItems";
 import { reducer as searchReducer } from "redux-search";
+import catalog, * as fromSearch from "./catalogItems";
 
 export default combineReducers({
   router: routerReducer,

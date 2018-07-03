@@ -31,9 +31,7 @@ const catalog = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        items: state.items.filter(item => {
-          return item.number !== action.number;
-        })
+        items: state.items.filter(item => item.number !== action.number)
       };
     }
     case "LOADING": {

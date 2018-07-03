@@ -1,29 +1,31 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import itemPropType from "../components/propTypes/item";
-import { Form, Text, Select, NestedField } from "react-form";
-import "../css/forms.css";
-import Loader from "./loader";
-import MultiFields from "./multiFields";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import {
+  Form, Text, Select, NestedField,
+} from 'react-form';
+import itemPropType from './propTypes/item';
+import '../css/forms.css';
+import Loader from './loader';
+import MultiFields from './multiFields';
 
-const required = (field, name) => {
+const required = (field) => {
   if (!field) {
-    return "Please enter a value";
+    return 'Please enter a value';
   }
+  return null;
 };
 
 class CatalogForm extends PureComponent {
   constructor(props) {
     super(props);
     this.submitForm = this.submitForm.bind(this);
-    this.state = {
-      formError: "",
-      formErrorMsg: ""
-    };
   }
+
   submitForm(submittedValues) {
-    this.props.submitForm(submittedValues);
+    const { submitForm } = this.props;
+    submitForm(submittedValues);
   }
+
   render() {
     const {
       currencies,
@@ -33,7 +35,7 @@ class CatalogForm extends PureComponent {
       item,
       edit,
       formErrorMsg,
-      success
+      success,
     } = this.props;
     let defaultValues = {};
     if (item) {
@@ -48,8 +50,8 @@ class CatalogForm extends PureComponent {
         price: item.price.amount,
         category: item.categories,
         categories: {
-          category: item.categories
-        }
+          category: item.categories,
+        },
       };
     }
 
@@ -59,7 +61,11 @@ class CatalogForm extends PureComponent {
           <Loader />
         ) : (
           <div className="container main">
-            <h1>{edit ? "Edit" : "Add"} a Catalog Item</h1>
+            <h1>
+              {edit ? 'Edit' : 'Add'}
+              {' '}
+a Catalog Item
+            </h1>
             <Form onSubmit={this.submitForm} defaultValues={defaultValues}>
               {formApi => (
                 <div>
@@ -67,14 +73,16 @@ class CatalogForm extends PureComponent {
                     <fieldset>
                       <div className="row">
                         <div className="field">
-                          <label htmlFor="number">Clients unique ID</label>
+                          <label htmlFor="number">
+Clients unique ID
+                          </label>
                           <Text
                             validate={required}
                             field="number"
                             title="Clients unique ID"
                             className={
                               formApi.errors && formApi.errors.number
-                                ? "error"
+                                ? 'error'
                                 : null
                             }
                           />
@@ -87,25 +95,31 @@ class CatalogForm extends PureComponent {
                       </div>
                       <div className="row">
                         <div className="field">
-                          <label htmlFor="name">Name</label>
+                          <label htmlFor="name">
+Name
+                          </label>
                           <Text
                             validate={required}
                             field="name"
                             title="Name of the actual item in the catalog"
                             className={
                               formApi.errors && formApi.errors.name
-                                ? "error"
+                                ? 'error'
                                 : null
                             }
                           />
                           {formApi.errors ? (
-                            <p className="form-error">{formApi.errors.name}</p>
+                            <p className="form-error">
+                              {formApi.errors.name}
+                            </p>
                           ) : null}
                         </div>
                       </div>
                       <div className="row">
                         <div className="field">
-                          <label htmlFor="price">Price</label>
+                          <label htmlFor="price">
+Price
+                          </label>
                           <Text
                             validate={required}
                             field="price"
@@ -113,25 +127,33 @@ class CatalogForm extends PureComponent {
                             title="Price"
                             className={
                               formApi.errors && formApi.errors.price
-                                ? "error"
+                                ? 'error'
                                 : null
                             }
                           />
                           {formApi.errors ? (
-                            <p className="form-error">{formApi.errors.price}</p>
+                            <p className="form-error">
+                              {formApi.errors.price}
+                            </p>
                           ) : null}
                         </div>
                       </div>
                       <div className="row">
                         <div className="field">
-                          <label htmlFor="description">Description</label>
+                          <label htmlFor="description">
+Description
+                          </label>
                           <Text field="description" title="Description" />
                         </div>
                       </div>
-                      <h1>Locale</h1>
+                      <h1>
+Locale
+                      </h1>
                       <div className="row">
                         <div className="field">
-                          <label htmlFor="language">Language</label>
+                          <label htmlFor="language">
+Language
+                          </label>
                           <Select
                             validate={required}
                             field="language"
@@ -139,7 +161,7 @@ class CatalogForm extends PureComponent {
                             options={languages}
                             className={
                               formApi.errors && formApi.errors.language
-                                ? "error"
+                                ? 'error'
                                 : null
                             }
                           />
@@ -152,7 +174,9 @@ class CatalogForm extends PureComponent {
                       </div>
                       <div className="row">
                         <div className="field">
-                          <label htmlFor="country">Country</label>
+                          <label htmlFor="country">
+Country
+                          </label>
                           <Select
                             validate={required}
                             field="country"
@@ -160,7 +184,7 @@ class CatalogForm extends PureComponent {
                             options={countries}
                             className={
                               formApi.errors && formApi.errors.country
-                                ? "error"
+                                ? 'error'
                                 : null
                             }
                           />
@@ -173,7 +197,9 @@ class CatalogForm extends PureComponent {
                       </div>
                       <div className="row">
                         <div className="field">
-                          <label htmlFor="currency">Currency</label>
+                          <label htmlFor="currency">
+Currency
+                          </label>
                           <Select
                             validate={required}
                             field="currency"
@@ -181,7 +207,7 @@ class CatalogForm extends PureComponent {
                             options={currencies}
                             className={
                               formApi.errors && formApi.errors.currency
-                                ? "error"
+                                ? 'error'
                                 : null
                             }
                           />
@@ -194,43 +220,51 @@ class CatalogForm extends PureComponent {
                       </div>
                     </fieldset>
 
-                    <h2>Categories</h2>
+                    <h2>
+Categories
+                    </h2>
                     <NestedField field="categories">
                       <MultiFields name="category" formApi={formApi} />
                     </NestedField>
-                    <h2>Images</h2>
+                    <h2>
+Images
+                    </h2>
                     <fieldset>
-                      {formApi.values.images &&
-                        formApi.values.images.map((image, i) => (
+                      {formApi.values.images
+                        && formApi.values.images.map((image, i) => (
                           <div
                             key={`image${i}`}
                             className="additional-field-divider"
                           >
-                            <label htmlFor={`image-url-${i}`}>Image url</label>
-                            <Text field={["images", i]} id={`image-url-${i}`} />
-                            <label htmlFor={`image-tag-${i}`}>Image tag</label>
+                            <label htmlFor={`image-url-${i}`}>
+Image url
+                            </label>
+                            <Text field={['images', i]} id={`image-url-${i}`} />
+                            <label htmlFor={`image-tag-${i}`}>
+Image tag
+                            </label>
                             <Select
                               validate={required}
-                              field={["images-tag", i]}
-                              title={["images-tag", i]}
+                              field={['images-tag', i]}
+                              title={['images-tag', i]}
                               options={[
                                 {
-                                  label: "thumbnail",
-                                  value: "thumbnail"
+                                  label: 'thumbnail',
+                                  value: 'thumbnail',
                                 },
                                 {
-                                  label: "checkout",
-                                  value: "checkout"
-                                }
+                                  label: 'checkout',
+                                  value: 'checkout',
+                                },
                               ]}
                               className={
                                 formApi.errors && formApi.errors.currency
-                                  ? "error"
+                                  ? 'error'
                                   : null
                               }
                             />
                             <button
-                              onClick={() => formApi.removeValue("images", i)}
+                              onClick={() => formApi.removeValue('images', i)}
                               type="button"
                               className="btn btn-danger remove-button"
                             >
@@ -241,8 +275,8 @@ class CatalogForm extends PureComponent {
                       <button
                         type="button"
                         onClick={() => {
-                          formApi.addValue("images-tag", "");
-                          formApi.addValue("images", "");
+                          formApi.addValue('images-tag', '');
+                          formApi.addValue('images', '');
                         }}
                         className="add-button btn btn-success"
                       >
@@ -250,9 +284,13 @@ class CatalogForm extends PureComponent {
                       </button>
                     </fieldset>
                     {success ? (
-                      <p className="success">Item added succesfully!</p>
+                      <p className="success">
+Item added succesfully!
+                      </p>
                     ) : null}
-                    <p className="error-msg">{formErrorMsg}</p>
+                    <p className="error-msg">
+                      {formErrorMsg}
+                    </p>
                     <button type="submit" className="btn submit">
                       Submit
                     </button>
@@ -274,11 +312,9 @@ CatalogForm.propTypes = {
   languages: PropTypes.array,
   countries: PropTypes.array,
   edit: PropTypes.bool,
-  number: PropTypes.string,
   submitForm: PropTypes.func,
-  formError: PropTypes.bool,
   formErrorMsg: PropTypes.string,
-  success: PropTypes.bool
+  success: PropTypes.bool,
 };
 CatalogForm.defaultProps = {
   item: {},
@@ -287,38 +323,8 @@ CatalogForm.defaultProps = {
   languages: [],
   countries: [],
   edit: false,
-  number: "",
   submitForm: () => void 0,
-  formError: false,
-  formErrorMsg: "",
-  success: false
+  formErrorMsg: '',
+  success: false,
 };
 export default CatalogForm;
-/*
-
-item
-
-Example Json: Minimal | Full
-The Flow item defines a specific item that can be purchased by a consumer. For many clients, this will map to a Sku.
-
-Field	Type	Required?	Default	Description
-id	string	Yes	-	
-Globally unique identifier
-
-number	string	Yes	-	
-Client’s unique identifier for this object
-
-locale	string	Yes	-	
-Example: en_US
-name	string	Yes	-	
-price	price	Yes	-	
-categories	[string]	Yes	[]	
-description	string	No	-	
-attributes	map[string]	Yes	{}	
-Attributes of the items. An attribute of type intent must be given as a string representation of a decimal to be correctly localized.
-
-dimensions	dimensions	Yes	-	
-images	[image]	Yes	[]	
-local	local	No	-	
-
-*/

@@ -1,14 +1,14 @@
-import Client from './client';
+import Client from "./client";
 
 export default class Orders extends Client {
   constructor(opts) {
     let options = opts;
 
-    if (typeof opts === 'string') {
+    if (typeof opts === "string") {
       options = { host: opts }; // convert host string to options object
     }
 
-    options.serviceName = 'API';
+    options.serviceName = "API";
 
     super(options);
   }
@@ -20,91 +20,139 @@ export default class Orders extends Client {
   post(organization, options = {}) {
     return this.makeRequest(`${this.host}/${organization}/orders`, {
       ...options,
-       method: 'POST',
+      method: "POST"
     });
   }
 
   getIdentifierByIdentifier(organization, identifier, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/orders/identifier/${identifier}`, options);
+    return this.makeRequest(
+      `${this.host}/${organization}/orders/identifier/${identifier}`,
+      options
+    );
   }
 
   getVersions(organization, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/orders/versions`, options);
+    return this.makeRequest(
+      `${this.host}/${organization}/orders/versions`,
+      options
+    );
   }
 
   getByNumber(organization, number, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/orders/${number}`, options);
+    return this.makeRequest(
+      `${this.host}/${organization}/orders/${number}`,
+      options
+    );
   }
 
   putByNumber(organization, number, options = {}) {
     return this.makeRequest(`${this.host}/${organization}/orders/${number}`, {
       ...options,
-       method: 'PUT',
+      method: "PUT"
     });
   }
 
   deleteByNumber(organization, number, options = {}) {
     return this.makeRequest(`${this.host}/${organization}/orders/${number}`, {
       ...options,
-       method: 'DELETE',
+      method: "DELETE"
     });
   }
 
   getAllocationsByNumber(organization, number, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/orders/${number}/allocations`, options);
+    return this.makeRequest(
+      `${this.host}/${organization}/orders/${number}/allocations`,
+      options
+    );
   }
 
   postAuthorizationsByNumber(organization, number, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/orders/${number}/authorizations`, {
-      ...options,
-       method: 'POST',
-    });
+    return this.makeRequest(
+      `${this.host}/${organization}/orders/${number}/authorizations`,
+      {
+        ...options,
+        method: "POST"
+      }
+    );
   }
 
   putDestinationByNumber(organization, number, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/orders/${number}/destination`, {
-      ...options,
-       method: 'PUT',
-    });
+    return this.makeRequest(
+      `${this.host}/${organization}/orders/${number}/destination`,
+      {
+        ...options,
+        method: "PUT"
+      }
+    );
   }
 
-  postInstallmentAndPlanAndAuthorizationsByNumber(organization, number, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/orders/${number}/installment/plan/authorizations`, {
-      ...options,
-       method: 'POST',
-    });
+  postInstallmentAndPlanAndAuthorizationsByNumber(
+    organization,
+    number,
+    options = {}
+  ) {
+    return this.makeRequest(
+      `${
+        this.host
+      }/${organization}/orders/${number}/installment/plan/authorizations`,
+      {
+        ...options,
+        method: "POST"
+      }
+    );
   }
 
   putInventoryAndReservationsByNumber(organization, number, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/orders/${number}/inventory/reservations`, {
-      ...options,
-       method: 'PUT',
-    });
+    return this.makeRequest(
+      `${this.host}/${organization}/orders/${number}/inventory/reservations`,
+      {
+        ...options,
+        method: "PUT"
+      }
+    );
   }
 
-  putPromotionsAndFreeShippingByNumberAndKey(organization, number, key, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/orders/${number}/promotions/${key}/free_shipping`, {
-      ...options,
-       method: 'PUT',
-    });
+  putPromotionsAndFreeShippingByNumberAndKey(
+    organization,
+    number,
+    key,
+    options = {}
+  ) {
+    return this.makeRequest(
+      `${
+        this.host
+      }/${organization}/orders/${number}/promotions/${key}/free_shipping`,
+      {
+        ...options,
+        method: "PUT"
+      }
+    );
   }
 
   putSubmissionsByNumber(organization, number, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/orders/${number}/submissions`, {
-      ...options,
-       method: 'PUT',
-    });
+    return this.makeRequest(
+      `${this.host}/${organization}/orders/${number}/submissions`,
+      {
+        ...options,
+        method: "PUT"
+      }
+    );
   }
 
   getStatusAndFraudByNumber(organization, number, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/orders/${number}/status/fraud`, options);
+    return this.makeRequest(
+      `${this.host}/${organization}/orders/${number}/status/fraud`,
+      options
+    );
   }
 
   postLabelsByNumber(organization, number, options = {}) {
-    return this.makeRequest(`${this.host}/${organization}/orders/${number}/labels`, {
-      ...options,
-       method: 'POST',
-    });
+    return this.makeRequest(
+      `${this.host}/${organization}/orders/${number}/labels`,
+      {
+        ...options,
+        method: "POST"
+      }
+    );
   }
-
 }
