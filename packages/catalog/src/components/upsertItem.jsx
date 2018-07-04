@@ -64,7 +64,7 @@ class CatalogForm extends PureComponent {
             <h1>
               {edit ? 'Edit' : 'Add'}
               {' '}
-a Catalog Item
+              a Catalog Item
             </h1>
             <Form onSubmit={this.submitForm} defaultValues={defaultValues}>
               {formApi => (
@@ -74,7 +74,7 @@ a Catalog Item
                       <div className="row">
                         <div className="field">
                           <label htmlFor="number">
-Clients unique ID
+                            Clients unique ID
                           </label>
                           <Text
                             validate={required}
@@ -96,7 +96,7 @@ Clients unique ID
                       <div className="row">
                         <div className="field">
                           <label htmlFor="name">
-Name
+                            Name
                           </label>
                           <Text
                             validate={required}
@@ -118,7 +118,7 @@ Name
                       <div className="row">
                         <div className="field">
                           <label htmlFor="price">
-Price
+                            Price
                           </label>
                           <Text
                             validate={required}
@@ -141,18 +141,18 @@ Price
                       <div className="row">
                         <div className="field">
                           <label htmlFor="description">
-Description
+                            Description
                           </label>
                           <Text field="description" title="Description" />
                         </div>
                       </div>
                       <h1>
-Locale
+                        Locale
                       </h1>
                       <div className="row">
                         <div className="field">
                           <label htmlFor="language">
-Language
+                            Language
                           </label>
                           <Select
                             validate={required}
@@ -175,7 +175,7 @@ Language
                       <div className="row">
                         <div className="field">
                           <label htmlFor="country">
-Country
+                            Country
                           </label>
                           <Select
                             validate={required}
@@ -198,7 +198,7 @@ Country
                       <div className="row">
                         <div className="field">
                           <label htmlFor="currency">
-Currency
+                            Currency
                           </label>
                           <Select
                             validate={required}
@@ -221,13 +221,13 @@ Currency
                     </fieldset>
 
                     <h2>
-Categories
+                      Categories
                     </h2>
                     <NestedField field="categories">
                       <MultiFields name="category" formApi={formApi} />
                     </NestedField>
                     <h2>
-Images
+                      Images
                     </h2>
                     <fieldset>
                       {formApi.values.images
@@ -237,11 +237,11 @@ Images
                             className="additional-field-divider"
                           >
                             <label htmlFor={`image-url-${i}`}>
-Image url
+                              Image url
                             </label>
                             <Text field={['images', i]} id={`image-url-${i}`} />
                             <label htmlFor={`image-tag-${i}`}>
-Image tag
+                              Image tag
                             </label>
                             <Select
                               validate={required}
@@ -285,7 +285,7 @@ Image tag
                     </fieldset>
                     {success ? (
                       <p className="success">
-Item added succesfully!
+                        Item added succesfully!
                       </p>
                     ) : null}
                     <p className="error-msg">

@@ -15,28 +15,28 @@ const CatalogTable = (props) => {
           <tbody>
             <tr>
               <th>
-Number
+                Number
               </th>
               <th>
-Brand
+                Brand
               </th>
               <th>
-Product
+                Product
               </th>
               <th>
-Description
+                Description
               </th>
               <th>
-Price
+                Price
               </th>
               <th>
-Image
+                Image
               </th>
               <th>
-Categories
+                Categories
               </th>
               <th colSpan="2">
-Actions
+                Actions
               </th>
             </tr>
             {items.length ? (
@@ -93,7 +93,7 @@ Actions
                       />
                     </a>
                   </td>
-                  <td className="action-link">
+                  <td className="action-link edit-link">
                     <Link to={`/upsert-item/${item.number}`}>
                       <i className="far fa-edit" />
                     </Link>
