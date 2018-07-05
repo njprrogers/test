@@ -20,7 +20,7 @@ const Header = () => (
               Add Item
             </Link>
             <Link href="/about-us" to="/about-us">
-              About
+              About the app
             </Link>
           </nav>
           <div className="logo">

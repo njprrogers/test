@@ -157,6 +157,7 @@ class CatalogForm extends PureComponent {
                           <Select
                             validate={required}
                             field="language"
+                            id="languages"
                             title="Language"
                             options={languages}
                             className={
@@ -181,6 +182,7 @@ class CatalogForm extends PureComponent {
                             validate={required}
                             field="country"
                             title="Country"
+                            id="countries"
                             options={countries}
                             className={
                               formApi.errors && formApi.errors.country
@@ -204,6 +206,7 @@ class CatalogForm extends PureComponent {
                             validate={required}
                             field="currency"
                             title="Currency"
+                            id="currencies"
                             options={currencies}
                             className={
                               formApi.errors && formApi.errors.currency

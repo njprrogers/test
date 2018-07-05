@@ -18,6 +18,11 @@ yarn install
 yarn start
 ```
 
+To run the tests:
+```
+yarn test
+```
+
 ### Folder structure
 
 I've organised the application's folder structure according to it's size and simplicity. If this was to scale up, I'd probably break the components out into further folders e.g. Forms / Scenes etc.

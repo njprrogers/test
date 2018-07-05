@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { expect } from 'chai';
-import { MemoryRouter } from 'react-router';
 import item from '../../fixtures/1493200';
 import CatalogTable from '../components/catalogTable';
 
