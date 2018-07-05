@@ -18,6 +18,7 @@ header a {
 }
 header a:last-child {
   border-right: none;
+  margin-right: 0;
 }
 .container {
   margin: 0 auto;

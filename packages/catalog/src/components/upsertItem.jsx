@@ -288,7 +288,7 @@ class CatalogForm extends PureComponent {
                     </fieldset>
                     {success ? (
                       <p className="success">
-                        Item added succesfully!
+                        Success!
                       </p>
                     ) : null}
                     <p className="error-msg">

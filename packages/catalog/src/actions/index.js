@@ -1,58 +1,58 @@
-import { itemsClient, documentsClient } from "../client";
+import { itemsClient, documentsClient } from '../client';
 
-export const SEARCH_CATALOG = "SEARCH_CATALOG";
+export const SEARCH_CATALOG = 'SEARCH_CATALOG';
 export function searchCatalog(subreddit) {
   return {
     type: SEARCH_CATALOG,
-    subreddit
+    subreddit,
   };
 }
-export const UPDATE_SEARCH_TERM = "UPDATE_SEARCH_TERM";
+export const UPDATE_SEARCH_TERM = 'UPDATE_SEARCH_TERM';
 export function updateSearchTerm(searchTerm) {
   return {
     type: UPDATE_SEARCH_TERM,
-    searchTerm
+    searchTerm,
   };
 }
-export const UPDATE_SEARCH_TYPE = "UPDATE_SEARCH_TYPE";
+export const UPDATE_SEARCH_TYPE = 'UPDATE_SEARCH_TYPE';
 export function updateSearchType(searchType) {
   return {
     type: UPDATE_SEARCH_TERM,
-    searchType
+    searchType,
   };
 }
-export const FETCH_CATALOG = "FETCH_CATALOG";
+export const FETCH_CATALOG = 'FETCH_CATALOG';
 function fetchCatalog() {
   return {
-    type: FETCH_CATALOG
+    type: FETCH_CATALOG,
   };
 }
-export const RECEIVE_CATALOG = "RECEIVE_CATALOG";
+export const RECEIVE_CATALOG = 'RECEIVE_CATALOG';
 function receiveCatalog(items) {
   return {
     type: RECEIVE_CATALOG,
     catalog: items.result,
-    receivedAt: Date.now()
+    receivedAt: Date.now(),
   };
 }
-export const LOADING = "LOADING";
+export const LOADING = 'LOADING';
 function loading() {
   return {
-    type: LOADING
+    type: LOADING,
   };
 }
-export const DELETE_COMPLETE = "DELETE_COMPLETE";
+export const DELETE_COMPLETE = 'DELETE_COMPLETE';
 function deleteComplete(number) {
   return {
     type: DELETE_COMPLETE,
-    number
+    number,
   };
 }
-export const EDIT_ITEM = "EDIT_ITEM";
+export const EDIT_ITEM = 'EDIT_ITEM';
 export function editCatalogItem(number) {
   return {
     type: EDIT_ITEM,
-    number
+    number,
   };
 }
 /**
@@ -64,14 +64,14 @@ export function getCatalog() {
     // This is not required by thunk middleware, but it is convenient for us.
     dispatch(fetchCatalog());
     return itemsClient
-      .get("frontend-exercises")
+      .get('frontend-exercises')
       .then(
         response => response,
         // Do not use catch, because that will also catch
         // any errors in the dispatch and resulting render,
         // causing a loop of 'Unexpected batch number' errors.
         // https://github.com/facebook/react/issues/6895
-        error => console.log("An error occurred.", error)
+        error => console.log('An error occurred.', error),
       )
       .then(json => dispatch(receiveCatalog(json)));
   };
@@ -85,20 +85,20 @@ export function deleteCatalogItem(number) {
     dispatch(loading());
     // deleteByNumber(organization, number, options = {})
     return itemsClient
-      .deleteByNumber("frontend-exercises", number)
+      .deleteByNumber('frontend-exercises', number)
       .then(
         response => response,
         // Do not use catch, because that will also catch
         // any errors in the dispatch and resulting render,
         // causing a loop of 'Unexpected batch number' errors.
         // https://github.com/facebook/react/issues/6895
-        error => console.log("An error occurred.", error)
+        error => console.log('An error occurred.', error),
       )
       .then(() => dispatch(deleteComplete(number)));
   };
 }
 function getSearchQuery(searchType, searchTerm) {
-  if (searchType === "all") {
+  if (searchType === 'all') {
     return searchTerm;
   }
   /* eslint-disable */

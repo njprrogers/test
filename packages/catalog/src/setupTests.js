@@ -6,4 +6,4 @@ import chaiEnzyme from 'chai-enzyme';
 configure({ adapter: new Adapter() });
 
 
-chai.use(chaiEnzyme()) // Note the invocation at the end
+chai.use(chaiEnzyme()); // Note the invocation at the end
