@@ -5,12 +5,12 @@ import querystring from "querystring";
 /**
  * Use the right implementation of fetch depending on the execution environment
  */
-let fetch;
-if (process.browser) {
-  fetch = window.fetch;
-} else {
-  fetch = require("node-fetch"); // eslint-disable-line global-require
-}
+// let fetch;
+// if (process.browser) {
+//   fetch = window.fetch;
+// } else {
+//   fetch = require("node-fetch"); // eslint-disable-line global-require
+// }
 
 export default class Client extends EventEmitter {
   static validateAuth(auth) {

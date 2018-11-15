@@ -32,7 +32,6 @@ function receiveCatalog(items) {
   return {
     type: RECEIVE_CATALOG,
     catalog: items.result,
-    receivedAt: Date.now(),
   };
 }
 export const LOADING = 'LOADING';
